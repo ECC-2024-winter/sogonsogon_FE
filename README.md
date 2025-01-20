@@ -1,16 +1,18 @@
 <div style="text-align: left;"> 
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🌟 ABOUT </h2>  
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🌟 About </h2>  
     <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 
-        혼자만의 시간을 가지고 싶다면, 언제든 찾아오세요!
-        여러분을 위한 꼭 맞는 하루를 선물하는 이곳은 '소근소근'입니다.
+        Roading..
     </div> 
 </div>
 
-## ❤️‍🔥 팀 소개
-| ![]() | ![]()| ![]() |   ![]() | ![]() |
-| :--: | :--: | :--: | :--: | :--: |
-| **정아윤** | **이현서** | **김재희** | **윤현진** | **서소은** |
-| **FE🌐**|**FE🌐**|**FE🌐**|**BE💻**|**BE💻**|
+## ❤️‍🔥 Team
+|  | Name | Role | Comment |
+| :--: | :--: | :--: | :--: |
+| ![]() | 정아윤 | FE🌐 | 한 줄 소개 |
+| ![]() | 이현서 | FE🌐 | 한 줄 소개 |
+| ![]() | 김재희 | FE🌐 | 한 줄 소개 |
+| ![]() | 윤현진 | BE💻 | 한 줄 소개 |
+| ![]() | 서소은 | BE💻 | 한 줄 소개 |
 
 <div style="text-align: left;">
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🔨 Tech Stacks </h2> <br> 
@@ -49,3 +51,5 @@
 |#|#|
 | :--: | :--: |
 |![]()|![]()|
+
+## 📌 Project
