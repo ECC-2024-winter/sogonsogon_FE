@@ -35,8 +35,8 @@
         <img src="https://img.shields.io/badge/Eslint-4B32C3?style=flat&logo=Eslint&logoColor=white">
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white">
         <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white">
+        <br/>
         <img src="https://img.shields.io/badge/amazonwebservices-232F3E?style=flat&logo=amazonwebservices&logoColor=white">
-      <br/>
         <img src="https://img.shields.io/badge/springboot-6DB33F?style=flat&logo=springboot&logoColor=white">
         <img src="https://img.shields.io/badge/ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white">
         <br/>
