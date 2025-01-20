@@ -1,20 +1,19 @@
 <div style="text-align: left;"> 
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🌟 ABOUT </h2>  
     <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 
-        소근소근?
+        혼자만의 시간을 가지고 싶다면, 언제든 찾아오세요!
+        여러분을 위한 꼭 맞는 하루를 선물하는 이곳은 '소근소근'입니다.
     </div> 
 </div>
 
 ## ❤️‍🔥 팀 소개
-| ![]() | ![]()| ![]() |
-| .... | **정아윤** | **UI/UX, FE 🖱️** | .... | 
-| .... | **이현서** | **FE 🖱️** | .... |
-| .... | **김재희** | **BE ⚙️** | .... |
-| .... | **윤현진** | **BE ⚙️** | .... |
-| .... | **서소은** | **BE ⚙️** | .... |
+| ![]() | ![]()| ![]() |   ![]() | ![]() |
+| :--: | :--: | :--: | :--: | :--: |
+| **정아윤** | **이현서** | **김재희** | **윤현진** | **서소은** |
+| **FE🌐**|**FE🌐**|**FE🌐**|**BE💻**|**BE💻**|
 
 <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 💻 Tech Stacks </h2> <br> 
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🔨 Tech Stacks </h2> <br> 
     <div align="center"> 
         <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white">
         <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white">
@@ -47,6 +46,6 @@
 
 ## 🎨 Color Scheme
 
-|#878787|#15204C|
+|#|#|
 | :--: | :--: |
 |![]()|![]()|
