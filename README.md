@@ -5,11 +5,11 @@
     </div> 
 </div>
 
-## 🔥 팀 소개
+## ⭐ 팀 소개
 | ![]() | ![]()| ![]() |   ![]() | ![]() |
 | :--: | :--: | :--: | :--: | :--: |
 | **정아윤** | **이현서** | **김재희** | **윤현진** | **서소은** |
-|**UI/UX, FE 🎨**|**FE 🎨**|**FE 🎨**|**BE 🗝️**|**BE 🗝️**|
+|**UI/UX, FE 🖱️**|**FE 🖱️**|**FE 🖱️**|**BE ⚙️**|**BE ⚙️**|
 
 - **정아윤** : ...
   
@@ -48,9 +48,9 @@
 </div>
 
 <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> Structure </h2>
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🔗 Structure </h2>
     <div align="center"> 
-        <img src="https://github.com/user-attachments/assets/1b64671a-25ea-4484-90fb-36782372548e" alt="menu structure">
+        <img src="" alt="menu structure">
     </div>
 </div>
 
