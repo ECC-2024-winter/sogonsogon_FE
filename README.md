@@ -13,8 +13,8 @@
 | ![]() | 윤현진 | BE💻 | 한 줄 소개 |
 | ![]() | 서소은 | BE💻 | 한 줄 소개 |
 
+## 🛠️ Tech Stacks
 <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🔨 Tech Stacks </h2> <br> 
     <div align="center"> 
         <img src="https://img.shields.io/badge/Figma-F24E1E?style=flat&logo=Figma&logoColor=white">
         <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white">
