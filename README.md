@@ -12,7 +12,7 @@
 | ![]() | 이현서 | FE🌐 | 한 줄 소개 |
 | ![]() | 김재희 | FE🌐 | 한 줄 소개 |
 | ![]() | 윤현진 | BE💻 | 한 줄 소개 |
-| ![]() | 서소은 | BE💻 | 한 줄 소개 |
+| ![https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxOTA3MjRfNTkg%2FMDAxNTYzOTgwMTY5NDI0.zMpPLyEuhDL-ssZaamMuCTJZbMPyxT-5ltM-FkQMf2gg.QDbVzwjbAq-UA5dDiBjbBVnaUoLELtp-wiof2sAzOzog.PNG.shock552%2Fscreenshot-www.youtube.com-2019.07.24-22_56_40.png&type=sc960_832]() | 서소은 | BE💻 | 한 줄 소개 |
 
 <div style="text-align: left;">
     <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🔨 Tech Stacks </h2> <br> 
