@@ -1,9 +1,8 @@
-<div style="text-align: left;"> 
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🌟 About </h2>  
-    <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 
-        Roading..
-    </div> 
-</div>
+## 🌟 About
+<p align="left">
+    <소근소근>은 혼자만의 시간을 누리고자하는 모든 이에게 최적의 하루를 선물합니다. <br/> 원하는 카테고리를 선택해 관심사가 비슷한 사람들과 추억을 공유하고 나만의 하루를 만들어보세요🧳
+  <br/>
+</p>
 
 ## ❤️‍🔥 Team
 |  | Name | Role | Comment |
