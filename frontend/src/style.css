@@ -1,0 +1,8 @@
+.button{
+    cursor:pointer;
+    transition: transform 300ms ease;
+    font-size: 100px;
+}
+.red{
+  color:red;
+}
