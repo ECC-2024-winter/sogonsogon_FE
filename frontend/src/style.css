@@ -1,3 +1,4 @@
+/*heartbutton*/
 .button{
     cursor:pointer;
     transition: transform 300ms ease;
@@ -5,4 +6,53 @@
 }
 .orange{
   color:#FFBF87;
+}
+
+/*header*/
+.header{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-bottom: 1px solid lightgray;
+}
+
+.headerObj {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    margin: 10;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color:#FFBF87;
+}
+
+.nav-links{
+    list-style-type: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-right: 3rem;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    margin-left: 20px;
 }
