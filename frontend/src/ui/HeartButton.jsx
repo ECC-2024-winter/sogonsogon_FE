@@ -22,7 +22,7 @@ class HeartButton extends React.Component{
         return(
             <div className="icons-list" onClick={this.onClick}> 
                 {this.state.isChecked ?
-                <HeartFilled style={{color:'red', fontSize: '25px'}}/> :
+                <HeartFilled style={{color:'orange', fontSize: '25px'}}/> :
                 <HeartOutlined style={{fontSize:'25px'}}/>}
             </div>
         )
