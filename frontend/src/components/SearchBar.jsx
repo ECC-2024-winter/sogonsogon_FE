@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SearchOutlined } from "@ant-design/icons"; // 검색 아이콘
-import "./SearchBar.css";
+import "../styles/SearchBar.css";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");

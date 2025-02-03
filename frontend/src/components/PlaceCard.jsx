@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HeartButton from "../ui/HeartButton";
-import "../style.css";
+import "../styles/PlaceCard.css";
 
 const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
   const [saved, setSaved] = useState(false);

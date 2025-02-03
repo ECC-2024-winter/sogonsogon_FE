@@ -1,0 +1,80 @@
+/* PlaceCard */
+.place-card {
+    width: 261.33px;
+    height: 347px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    padding: 20px 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+  
+/* 이미지 컨테이너 */
+.place-card .image-container {
+    width: 229.33px;
+    height: 247px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 8px;
+    overflow: hidden;
+}
+  
+.place-card .place-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 0;
+}
+  
+.place-card .placeholder-text {
+    font-size: 14px;
+    color: #aaa;
+}
+  
+/* 텍스트 프레임 */
+.place-card .frame {
+    width: 100%;
+    padding: 8px;
+}
+  
+.place-card .frame-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+  
+/* 장소 이름 */
+.place-card .place-name {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+  
+/* 하트 버튼 컨테이너 */
+.place-card .heart-button-container {
+    display: flex;
+    align-items: center;
+}
+  
+/* 장소 위치 */
+.place-card .place-info {
+    width: 100%;
+    text-align: left;
+}
+  
+.place-card .place-location {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+    padding: 0px 20px;
+}  

@@ -4,7 +4,7 @@ import { LuCoffee } from "react-icons/lu";
 import { AiOutlinePicture } from "react-icons/ai";
 import { SlDrawer } from "react-icons/sl";
 import { BsPersonWorkspace } from "react-icons/bs";
-import "./Category.css";
+import "../styles/Category.css";
 
 const categories = [
   { id: 1, name: "맛집", icon: <IoIosRestaurant />, hashtag: "#맛집" },
