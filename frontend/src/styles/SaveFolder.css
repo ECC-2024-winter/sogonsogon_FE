@@ -26,24 +26,28 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
+    margin-left: 0px;
 }
 .place-image2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    margin-left: 0px;
 }
 .place-image3 {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    margin-left: 0px;
 }
 .place-image4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
+    margin-left: 0px;
 }
 
 .no-img {
@@ -51,7 +55,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    margin: 0px;
+    margin-left: 0px;
 }
 
 .placeholder-text {
