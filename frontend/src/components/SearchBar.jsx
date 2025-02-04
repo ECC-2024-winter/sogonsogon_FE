@@ -9,6 +9,8 @@ const SearchBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
+
+    // TODO: 왜 trim 써야하는지?
     if (query.trim()) {
       navigate(`/search?query=${encodeURIComponent(query)}`); // 검색 결과 페이지로 이동
     }

@@ -12,20 +12,31 @@ const categories = [
   { id: 2, name: "카페", icon: <LuCoffee />, hashtag: "#카페" },
   { id: 3, name: "전시회", icon: <AiOutlinePicture />, hashtag: "#전시회" },
   { id: 4, name: "소품샵", icon: <SlDrawer />, hashtag: "#소품샵" },
-  { id: 5, name: "연극/공연", icon: <BsPersonWorkspace />, hashtag: "#연극/공연" },
+  {
+    id: 5,
+    name: "연극/공연",
+    icon: <BsPersonWorkspace />,
+    hashtag: "#연극/공연",
+  },
 ];
 
 const Category = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = (hashtag) => {
+    // TODO: 왜 encodeURI 했는지 공부
     navigate(`/search?query=${encodeURIComponent(hashtag)}`);
   };
 
   return (
     <div className="category-container">
+      {/* TODO: 디스트럭쳐링 해보기 */}
       {categories.map((category) => (
-        <div key={category.id} className="category-item" onClick={() => handleCategoryClick(category.hashtag)}>
+        <div
+          key={category.id}
+          className="category-item"
+          onClick={() => handleCategoryClick(category.hashtag)}
+        >
           <div className="category-icon">{category.icon}</div>
           <span className="category-name">{category.name}</span>
         </div>
@@ -35,4 +46,3 @@ const Category = () => {
 };
 
 export default Category;
-

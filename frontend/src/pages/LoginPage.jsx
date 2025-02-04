@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import LogInContainer from "../components/LogInContainer";
 import InputField from "../components/InputField";
-import Button from "../ui/Button/ButtonLogin";
+import Button from "../components/common/Button/ButtonLogin";
 import "../styles/LoginSignup.css"
 
 const LoginPage = () => {

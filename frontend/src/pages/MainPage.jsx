@@ -3,6 +3,7 @@ import SearchOutlined from "../components/SearchBar";
 import PlaceCard from "../components/PlaceCard";
 import Category from "../components/Category";
 import "../styles/MainPage.css";
+import * as S from "../styles/Main.style";
 
 // 임시 데이터
 const recommendations = [
@@ -48,30 +49,32 @@ function MainPage() {
   };
 
   return (
-    <div className="MainPage">
-      <Header></Header>
-      <SearchOutlined></SearchOutlined>
-      <Category></Category>
-      <div className="recommendation-container">
+    <div>
+      <Header />
+      <SearchOutlined />
+      <Category />
+      <S.RecommendationContainer>
+        {/* TODO: 디스트럭쳐링 해봅시다 */}
         {recommendations.map((section, index) => (
-          <div key={index} className="recommendation-section">
+          // TODO: key 왜 index 썼나요? => https://ko.react.dev/learn/rendering-lists#rules-of-keys
+          <S.RecommendationSection key={index}>
             {/* Title */}
-            <h2 className="recommendation-title">{section.title}</h2>
+            <S.RecommendationTitle>{section.title}</S.RecommendationTitle>
             {/* PlaceCard 가로 정렬 */}
-            <div className="place-card-container">
+            <S.PlaceCardContainer>
               {section.places.map((place) => (
                 <PlaceCard
-                key={place.id}
-                imageUrl={place.imageUrl}
-                placeName={place.placeName}
-                location={place.location}
-                onSave={handleSave}
+                  key={place.id}
+                  imageUrl={place.imageUrl}
+                  placeName={place.placeName}
+                  location={place.location}
+                  onSave={handleSave}
                 />
               ))}
-            </div>
-          </div>
+            </S.PlaceCardContainer>
+          </S.RecommendationSection>
         ))}
-      </div>
+      </S.RecommendationContainer>
     </div>
   );
 }
