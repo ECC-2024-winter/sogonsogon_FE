@@ -1,13 +1,17 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { SearchOutlined } from "@ant-design/icons"; // 검색 아이콘
-import "../styles/SearchBar.css";
+import "./SearchBar.css";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log("검색어:", query);
+    if (query.trim()) {
+      navigate(`/search?query=${encodeURIComponent(query)}`); // 검색 결과 페이지로 이동
+    }
   };
 
   return (
