@@ -5,6 +5,7 @@ import { AiOutlinePicture } from "react-icons/ai";
 import { SlDrawer } from "react-icons/sl";
 import { BsPersonWorkspace } from "react-icons/bs";
 import "../styles/Category.css";
+import { useNavigate } from "react-router-dom";
 
 const categories = [
   { id: 1, name: "맛집", icon: <IoIosRestaurant />, hashtag: "#맛집" },
@@ -15,10 +16,16 @@ const categories = [
 ];
 
 const Category = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (hashtag) => {
+    navigate(`/search?query=${encodeURIComponent(hashtag)}`);
+  };
+
   return (
     <div className="category-container">
       {categories.map((category) => (
-        <div key={category.id} className="category-item">
+        <div key={category.id} className="category-item" onClick={() => handleCategoryClick(category.hashtag)}>
           <div className="category-icon">{category.icon}</div>
           <span className="category-name">{category.name}</span>
         </div>
