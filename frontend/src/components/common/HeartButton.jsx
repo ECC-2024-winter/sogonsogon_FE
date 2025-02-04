@@ -1,6 +1,6 @@
 import React from "react";
 import {HeartOutlined, HeartFilled} from '@ant-design/icons';
-import '../style.css'
+import '../../style.css'
 
 class HeartButton extends React.Component{
     state={
