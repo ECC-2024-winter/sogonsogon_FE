@@ -7,7 +7,7 @@
 </p>
 
 ## ❤️‍🔥 Team
-| ![](https://imgur.com/RPST1RG.jpg) | ![](https://imgur.com/zJP396w.jpg)| <img src="https://github.com/user-attachments/assets/cc2f2576-7546-417e-9fba-97d8bd0b3aed" width="30%" height="30%"/> | ![](https://imgur.com/zHpbNll.jpg) | ![](https://imgur.com/lSdKMN9.jpg) |
+| ![](https://imgur.com/RPST1RG.jpg) | ![](https://imgur.com/zJP396w.jpg) | ![](https://imgur.com/ROzR2VA.jpg) | ![](https://imgur.com/zHpbNll.jpg) | ![](https://imgur.com/lSdKMN9.jpg) |
 | :--: | :--: | :--: | :--: | :--: |
 | **정아윤** | **이현서** | **김재희** | **윤현진** | **서소은** |
 |**UIUX🎨 FE 🌐**|**FE 🌐**|**BE 💻**|**BE 💻**|**BE 💻**|
@@ -55,19 +55,30 @@
 |![](https://imgur.com/H4lDsye.jpg)|![](https://imgur.com/WqP5pQf.jpg)|
 
 ## 📌 Project
-- ### 로그인/회원가입
+> **회원가입/로그인**
+
 ![Frame 51](https://imgur.com/dA743im.jpg)
 ![Frame 51](https://imgur.com/I0MhPOn.jpg)
-- ### 메인 페이지
+
+> **메인 페이지**
+> 
 ![Frame 51](https://imgur.com/5FDEcCm.jpg)
 ![Frame 51](https://imgur.com/rpZnD6W.jpg)
-- ### 검색 페이지
+
+> **검색 페이지**
+> 
 ![Frame 51](https://imgur.com/eemYoJ3.jpg)
-- ### 장소 정보 상세 페이지
+
+> **장소 정보 상세 페이지**
+> 
 ![Frame 51](https://imgur.com/8RxBI38.jpg)
-- ### 저장 목록 페이지
+
+> **저장 목록 페이지**
+> 
 ![Frame 51](https://imgur.com/sVveIug.jpg)
-- ### 마이페이지
+
+> **마이페이지**
+> 
 ![Frame 51](https://imgur.com/dfJRQsT.jpg)
 ![Frame 51](https://imgur.com/JKZSNF9.jpg)
 ![Frame 51](https://imgur.com/MeWYOeB.jpg)
