@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
-import LogInContainer from "../components/LogInContainer";
-import InputField from "../components/InputField";
-import Button from "../components/common/Button/ButtonLogin";
-import "../styles/LoginSignup.css"
+import Header from "../../components/Header/Header";
+import LogInContainer from "../../components/LoginSignup/LogInContainer";
+import InputField from "../../components/LoginSignup/InputField";
+import Button from "../../components/common/Button/ButtonLogin";
+import "./LoginSignup.css"
 
 const SignupPage = () => {
   const [nickname, setNickname] = useState("");

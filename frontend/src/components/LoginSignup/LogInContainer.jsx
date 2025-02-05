@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/LoginSignup.css";
-import logo from "../onlylogo.png";
+import "../../pages/LoginSignup/LoginSignup.css"
+import logo from "../../images/onlylogo.png";
 
 const LogInContainer = ({ title, children }) => {
   return (

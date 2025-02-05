@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../styles/LoginSignup.css"
+import "../../../pages/LoginSignup/LoginSignup.css"
 
 const Button = ({ text, onClick, disabled }) => {
   return (

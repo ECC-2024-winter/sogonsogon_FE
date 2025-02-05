@@ -1,7 +1,7 @@
 // TODO: import React 제거
 // https://so-so.dev/react/import-react-from-react/
 import React from "react";
-import "../styles/SaveFolder.css";
+import "./SaveFolder.css";
 import imageIcon from "../images/imageicon.png";
 
 const SaveFolder = ({
