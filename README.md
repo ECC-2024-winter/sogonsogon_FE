@@ -7,7 +7,7 @@
 </p>
 
 ## ❤️‍🔥 Team
-| ![](https://imgur.com/RPST1RG.jpg) | ![](https://imgur.com/zJP396w.jpg)| ![]() | ![](https://imgur.com/zHpbNll.jpg) | ![](https://imgur.com/lSdKMN9.jpg) |
+| ![](https://imgur.com/RPST1RG.jpg) | ![](https://imgur.com/zJP396w.jpg)| ![](https://imgur.com/cWqlzIA.jpg) | ![](https://imgur.com/zHpbNll.jpg) | ![](https://imgur.com/lSdKMN9.jpg) |
 | :--: | :--: | :--: | :--: | :--: |
 | **정아윤** | **이현서** | **김재희** | **윤현진** | **서소은** |
 |**UIUX🎨 FE 🌐**|**FE 🌐**|**BE 💻**|**BE 💻**|**BE 💻**|
