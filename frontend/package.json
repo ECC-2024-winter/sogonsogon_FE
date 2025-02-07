@@ -39,6 +39,12 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-prettier": "^10.0.1"
-  }
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "3.4.2"
+  },
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
