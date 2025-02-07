@@ -1,9 +1,8 @@
-import Header from "../components/Header";
-import SearchOutlined from "../components/SearchBar";
-import PlaceCard from "../components/PlaceCard";
-import Category from "../components/Category";
-import "../styles/MainPage.css";
-import * as S from "../styles/Main.style";
+import Header from "../../components/Header/Header";
+import SearchOutlined from "../../components/searchBar/SearchBar";
+import PlaceCard from "../../components/PlaceCard";
+import Category from "../../components/category/Category";
+import * as S from "./Main.style";
 
 // 임시 데이터
 const recommendations = [
