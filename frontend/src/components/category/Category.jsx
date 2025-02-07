@@ -4,7 +4,7 @@ import { LuCoffee } from "react-icons/lu";
 import { AiOutlinePicture } from "react-icons/ai";
 import { SlDrawer } from "react-icons/sl";
 import { BsPersonWorkspace } from "react-icons/bs";
-import "../styles/Category.css";
+import "./Category.css";
 import { useNavigate } from "react-router-dom";
 
 const categories = [

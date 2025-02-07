@@ -1,6 +1,6 @@
-import Header from "../components/Header";
-import SaveFolder from "../components/SaveFolder";
-import "../styles/SaveListPage.css";
+import Header from "../../components/Header/Header";
+import SaveFolder from "../../components/saveFolder/SaveFolder";
+import "./SaveListPage.css";
 
 /*가상 데이터*/
 const folders = [

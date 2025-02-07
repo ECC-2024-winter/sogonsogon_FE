@@ -1,3 +1,5 @@
+![Frame 51](https://imgur.com/7T3TFQA.jpg)
+
 ## 🌟 About
 <p align="left">
     <소곤소곤>은 혼자만의 시간을 누리고자하는 모든 이에게 최적의 하루를 선물합니다. <br/> 원하는 카테고리를 선택해 관심사가 비슷한 사람들과 추억을 공유하고 나만의 하루를 만들어보세요🧳
@@ -5,13 +7,21 @@
 </p>
 
 ## ❤️‍🔥 Team
-|  | Name | Role | Comment |
-| :--: | :--: | :--: | :--: |
-| ![]() | 정아윤 | FE🌐 | 한 줄 소개 |
-| ![]() | 이현서 | FE🌐 | 한 줄 소개 |
-| ![]() | 김재희 | FE🌐 | 한 줄 소개 |
-| ![]() | 윤현진 | BE💻 | 한 줄 소개 |
-| ![](https://imgur.com/a/iJzVoJN.jpg) | 서소은 | BE💻 | 풀스택 개발자가 되기까지 열심히 노력하는 중입니다✌️ |
+| ![](https://imgur.com/RPST1RG.jpg) | ![](https://imgur.com/zJP396w.jpg) | ![](https://imgur.com/ROzR2VA.jpg) | ![](https://imgur.com/zHpbNll.jpg) | ![](https://imgur.com/lSdKMN9.jpg) |
+| :--: | :--: | :--: | :--: | :--: |
+| **정아윤** | **이현서** | **김재희** | **윤현진** | **서소은** |
+|**UIUX🎨 FE 🌐**|**FE 🌐**|**BE 💻**|**BE 💻**|**BE 💻**|
+
+> **정아윤** : 성장하는 개발자로 계속 노력하겠습니다 ✨
+
+> **이현서** : 개발의 매력을 탐구하며 프론트엔드를 공부합니다🎀
+
+> **김재희** : 백엔드를 공부 중입니다! 처음이라 미숙합니다 감사합니다! :D
+
+> **윤현진** : 여러 분야를 경험해보고 싶은 컴퓨터공학과 윤현지입니다☺️
+
+> **서소은** : 풀스택 개발자가 되기까지 열심히 노력하는 중입니다✌️
+
 
 ## 🛠️ Tech Stacks
 <div style="text-align: left;">
@@ -38,19 +48,40 @@
     </div>
 </div>
 
-<div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🔗 Structure </h2>
-    Roading..
-    <div align="center"> 
-        <img src="" alt="">
-    </div>
-</div>
-
 ## 🎨 Color Scheme
 
-|#|#|
+|#FFBF87|#F4F4F4|
 | :--: | :--: |
-|![]()|![]()|
+|![](https://imgur.com/H4lDsye.jpg)|![](https://imgur.com/WqP5pQf.jpg)|
 
 ## 📌 Project
-Roading..
+> **회원가입/로그인**
+
+![Frame 51](https://imgur.com/dA743im.jpg)
+![Frame 51](https://imgur.com/I0MhPOn.jpg)
+
+> **메인 페이지**
+> 
+![Frame 51](https://imgur.com/5FDEcCm.jpg)
+![Frame 51](https://imgur.com/rpZnD6W.jpg)
+
+> **검색 페이지**
+> 
+![Frame 51](https://imgur.com/eemYoJ3.jpg)
+
+> **장소 정보 상세 페이지**
+> 
+![Frame 51](https://imgur.com/8RxBI38.jpg)
+
+> **저장 목록 페이지**
+> 
+![Frame 51](https://imgur.com/sVveIug.jpg)
+
+> **마이페이지**
+> 
+![Frame 51](https://imgur.com/dfJRQsT.jpg)
+![Frame 51](https://imgur.com/JKZSNF9.jpg)
+![Frame 51](https://imgur.com/MeWYOeB.jpg)
+
+
+

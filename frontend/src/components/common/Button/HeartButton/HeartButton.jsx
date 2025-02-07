@@ -1,6 +1,6 @@
 import React from "react";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
-import "../../style.css";
+import "./HeartButton.css";
 
 // TODO: function 컴포넌트로 수정
 class HeartButton extends React.Component {
