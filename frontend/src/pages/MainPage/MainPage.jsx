@@ -54,9 +54,9 @@ function MainPage() {
       <Category />
       <S.RecommendationContainer>
         {/* TODO: 디스트럭쳐링 해봅시다 */}
-        {recommendations.map(({title, places}, index) => (
+        {recommendations.map(({title, places}) => (
           // TODO: key 왜 index 썼나요? => https://ko.react.dev/learn/rendering-lists#rules-of-keys
-          <S.RecommendationSection key={index}>
+          <S.RecommendationSection>
             {/* Title */}
             <S.RecommendationTitle>{title}</S.RecommendationTitle>
             {/* PlaceCard 가로 정렬 */}
