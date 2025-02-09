@@ -1,8 +1,7 @@
 // TODO: import React 제거
 // https://so-so.dev/react/import-react-from-react/
-import React from "react";
-import "./SaveFolder.css";
-import imageIcon from "../images/imageicon.png";
+import imageIcon
+import * as S from "./SaveFolder.style"
 
 const SaveFolder = ({
   imageUrl1,
@@ -12,8 +11,9 @@ const SaveFolder = ({
   folderName,
 }) => {
   return (
-    <div className="save-folder">
-      <div className="image-container">
+    <div>
+    <S.SaveFolder>
+      <S.ImageContainer>
         {imageUrl1 ? (
           <img src={imageUrl1} className="place-image1" />
         ) : (
@@ -34,7 +34,7 @@ const SaveFolder = ({
         ) : (
           <img src={imageIcon} className="no-img" />
         )}
-      </div>
+      </S.ImageContainer>
       <div>
         {folderName ? (
           <p className="folder-name">{folderName}</p>
@@ -42,6 +42,7 @@ const SaveFolder = ({
           <p className="folder-name">폴더</p>
         )}
       </div>
+    </S.SaveFolder>
     </div>
   );
 };
