@@ -6,12 +6,16 @@ import * as S from "./SaveListPage.style";
 const folders = [
   {
     id: 1,
+    imageUrl: [],
     folderName: "혼밥 맛집",
   },
   {
     id: 2,
     imageUrl: [
       "https://blog.kakaocdn.net/dn/dizeYM/btrN5vZONwk/0ShfJor6t6KANhKzI3Qr1k/img.jpg",
+      "https://storage.heypop.kr/assets/2024/02/26114133/main.1-scaled.jpg",
+      "https://www.visitseoul.net/comm/getImage?srvcId=MEDIA&parentSn=49036&fileTy=MEDIA&fileNo=1",
+      "https://www.visitseoul.net/comm/getImage?srvcId=MEDIA&parentSn=49035&fileTy=MEDIA&fileNo=1",
     ],
     folderName: "북카페/ 작업하기 좋은 카페",
   },
@@ -35,26 +39,6 @@ const folders = [
     imageUrl: [],
     folderName: null,
   },
-  {
-    id: 7,
-    imageUrl: [],
-    folderName: null,
-  },
-  {
-    id: 8,
-    imageUrl: [],
-    folderName: null,
-  },
-  {
-    id: 9,
-    imageUrl: [],
-    folderName: null,
-  },
-  {
-    id: 10,
-    imageUrl: [],
-    folderName: null,
-  },
 ];
 
 function SaveListPage() {
@@ -65,8 +49,8 @@ function SaveListPage() {
       <S.SaveFolders>
         <S.SaveFolderContainer>
           {/* TODO: 디스트럭처링 필요 */}
-          {Array.from({ length: 4 }, (_, index) => (
-            <S.PlaceImage key={index} src={imageUrls[index] || imageIcon} />
+          {folders.map(({ id, imageUrl, folderName }) => (
+            <SaveFolder key={id} imageUrls={imageUrl} folderName={folderName} />
           ))}
         </S.SaveFolderContainer>
       </S.SaveFolders>

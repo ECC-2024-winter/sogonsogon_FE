@@ -14,18 +14,21 @@ export const SaveFolder = styled.div`
 
 export const ImageContainer = styled.div`
   display: grid;
+  overflow: hidden;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-auto-columns: 150px;
   grid-auto-rows: 150px;
-  border: 1px;
-  border-color: solid #b2b2b2;
-  gap: 0;
+  border: 1px solid #b2b2b2;
+  border-radius: 12px;
+  gap: 2px;
+  padding: 0px;
 `;
 
 export const PlaceImage = styled.img`
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
   margin-left: 0px;

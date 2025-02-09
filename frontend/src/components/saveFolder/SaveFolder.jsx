@@ -1,26 +1,16 @@
 // TODO: import React 제거
 // https://so-so.dev/react/import-react-from-react/
-import imageIcon from "../images/imageicon.png";
+import imageIcon from "../../images/imageicon.png";
 import * as S from "./SaveFolder.style";
 
-const SaveFolder = ({
-  imageUrl1,
-  imageUrl2,
-  imageUrl3,
-  imageUrl4,
-  folderName,
-}) => {
-  const imageUrls = [imageUrl1, imageUrl2, imageUrl3, imageUrl4];
+const SaveFolder = ({ imageUrls, folderName }) => {
+  const images = imageUrls.length > 0 ? imageUrls : [imageIcon];
 
   return (
     <S.SaveFolder>
       <S.ImageContainer>
-        {imageUrls.map((url, index) => (
-          <S.PlaceImage
-            key={index}
-            src={url || imageIcon}
-            className={url ? "place-image" : "no-img"}
-          />
+        {images.map((url, index) => (
+          <S.PlaceImage key={index} src={url || imageIcon} />
         ))}
       </S.ImageContainer>
       <S.FolderName>{folderName || "폴더"}</S.FolderName>
