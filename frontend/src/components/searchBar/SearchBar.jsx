@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { SearchOutlined } from "@ant-design/icons"; // 검색 아이콘
-import "./SearchBar.css";
+import * as S from "./SearchBar.style";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -17,19 +16,19 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-container">
-      <form onSubmit={handleSearch} className="search-bar">
-        <input
+    <S.SearchContainer>
+      <S.SearchBar onSubmit={handleSearch}>
+        <S.SearchInput
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="지역/장소/활동 등을 검색하세요."
         />
-        <button type="submit" className="search-button">
-          <SearchOutlined />
-        </button>
-      </form>
-    </div>
+        <S.SearchButton type="submit">
+          <S.SearchIcon />
+        </S.SearchButton>
+      </S.SearchBar>
+    </S.SearchContainer>
   );
 };
 

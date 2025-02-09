@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import HeartButton from "../common/Button/HeartButton/HeartButton";
-import "./PlaceCard.css";
+import * as S from "./PlaceCard.style";
 
 const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
   const [saved, setSaved] = useState(false);
@@ -13,31 +13,29 @@ const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
   };
 
   return (
-    <div className="place-card">
+    <S.PlaceCard>
       {/* 이미지 영역 */}
-      <div className="image-container">
+      <S.ImageContainer>
         {imageUrl ? (
-          <img src={imageUrl} alt={placeName} className="place-image" />
+          <S.PlaceImage src={imageUrl} alt={placeName}/>
         ) : (
-          <span className="placeholder-text">이미지 없음</span>
+          <S.PlaceholderText>이미지 없음</S.PlaceholderText>
         )}
-      </div>
+      </S.ImageContainer>
 
       {/* 이미지 아래 영역 */}
-      <div className="frame">
-        <div className="frame-2">
-          <h3 className="place-name">{placeName}</h3>
+      <S.TextFrame>
+        <S.NameSave>
+          <S.PlaceName>{placeName}</S.PlaceName>
           {/* HeartButton 컴포넌트 */}
-          <div className="heart-button-container">
+          <S.HeartbuttonContainer>
             <HeartButton onClick={onSave} />
-          </div>
-        </div>
-      </div>
+          </S.HeartbuttonContainer>
+        </S.NameSave>
+      </S.TextFrame>
       {/* 장소 위치 */}
-      <div className="place-info">
-        <p className="place-location">{location}</p>
-      </div>
-    </div>
+      <S.PlaceLocation>{location}</S.PlaceLocation>
+    </S.PlaceCard>
   );
 };
 

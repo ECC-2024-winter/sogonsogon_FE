@@ -1,16 +1,11 @@
-import React from "react";
-import "../../pages/LoginSignup/LoginSignup.css"
+import * as S from "../../pages/LoginSignup/LoginSignup.style";
 
 const InputField = ({ label, type, value, onChange}) => {
   return (
-    <div className="input-container">
-      <label className="input-label">{label}</label>
-      <input
-        type={type}
-        value={value}
-        onChange={onChange}
-      />
-    </div>
+    <S.InputContainer>
+      <S.InputLabel>{label}</S.InputLabel>
+      <input type={type} value={value} onChange={onChange}/>
+    </S.InputContainer>
   );
 };
 

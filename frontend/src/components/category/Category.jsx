@@ -1,10 +1,9 @@
-import React from "react";
 import { IoIosRestaurant } from "react-icons/io";
 import { LuCoffee } from "react-icons/lu";
 import { AiOutlinePicture } from "react-icons/ai";
 import { SlDrawer } from "react-icons/sl";
 import { BsPersonWorkspace } from "react-icons/bs";
-import "./Category.css";
+import * as S from "./Category.style";
 import { useNavigate } from "react-router-dom";
 
 const categories = [
@@ -29,19 +28,18 @@ const Category = () => {
   };
 
   return (
-    <div className="category-container">
+    <S.CategoryContainer>
       {/* TODO: 디스트럭쳐링 해보기 */}
       {categories.map((category) => (
-        <div
+        <S.CategoryItem
           key={category.id}
-          className="category-item"
           onClick={() => handleCategoryClick(category.hashtag)}
         >
-          <div className="category-icon">{category.icon}</div>
-          <span className="category-name">{category.name}</span>
-        </div>
+          <S.CategoryIcon>{category.icon}</S.CategoryIcon>
+          <S.CategoryName>{category.name}</S.CategoryName>
+        </S.CategoryItem>
       ))}
-    </div>
+    </S.CategoryContainer>
   );
 };
 
