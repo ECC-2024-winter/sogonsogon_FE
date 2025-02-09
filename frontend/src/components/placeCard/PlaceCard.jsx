@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HeartButton from "./common/HeartButton";
+import HeartButton from "../common/Button/HeartButton/HeartButton";
 import "./PlaceCard.css";
 
 const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {

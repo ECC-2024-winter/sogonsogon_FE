@@ -1,6 +1,6 @@
 import Header from "../../components/Header/Header";
 import SearchOutlined from "../../components/searchBar/SearchBar";
-import PlaceCard from "../../components/PlaceCard";
+import PlaceCard from "../../components/placeCard/PlaceCard";
 import Category from "../../components/category/Category";
 import * as S from "./Main.style";
 
