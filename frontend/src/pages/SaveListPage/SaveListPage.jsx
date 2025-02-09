@@ -1,6 +1,6 @@
 import Header from "../../components/Header/Header";
 import SaveFolder from "../../components/saveFolder/SaveFolder";
-import "./SaveListPage.css";
+import * as S from "./SaveListPage.style";
 
 /*가상 데이터*/
 const folders = [
@@ -22,6 +22,7 @@ const folders = [
   },
   {
     id: 4,
+    imageUrl: [],
     folderName: "망원동 소품샵",
   },
   {
@@ -31,41 +32,44 @@ const folders = [
   },
   {
     id: 6,
+    imageUrl: [],
+    folderName: null,
   },
   {
     id: 7,
+    imageUrl: [],
+    folderName: null,
   },
   {
     id: 8,
+    imageUrl: [],
+    folderName: null,
   },
   {
     id: 9,
+    imageUrl: [],
+    folderName: null,
   },
   {
     id: 10,
+    imageUrl: [],
+    folderName: null,
   },
 ];
 
 function SaveListPage() {
   return (
-    <div className="save-list-page">
+    <div>
       <Header />
-      <div className="save-title">저장 목록</div>
-      <div className="save-folders">
-        <div className="save-folder-container">
+      <S.SaveTitle>저장 목록</S.SaveTitle>
+      <S.SaveFolders>
+        <S.SaveFolderContainer>
           {/* TODO: 디스트럭처링 필요 */}
-          {folders.map((folder) => (
-            <SaveFolder
-              key={folder.id}
-              imageUrl1={folder.imageUrl1}
-              imageUrl2={folder.imageUrl2}
-              imageUrl3={folder.imageUrl3}
-              imageUrl4={folder.imageUrl4}
-              folderName={folder.folderName}
-            />
+          {Array.from({ length: 4 }, (_, index) => (
+            <S.PlaceImage key={index} src={imageUrls[index] || imageIcon} />
           ))}
-        </div>
-      </div>
+        </S.SaveFolderContainer>
+      </S.SaveFolders>
     </div>
   );
 }
