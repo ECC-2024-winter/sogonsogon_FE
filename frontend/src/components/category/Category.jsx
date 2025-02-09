@@ -30,13 +30,10 @@ const Category = () => {
   return (
     <S.CategoryContainer>
       {/* TODO: 디스트럭쳐링 해보기 */}
-      {categories.map((category) => (
-        <S.CategoryItem
-          key={category.id}
-          onClick={() => handleCategoryClick(category.hashtag)}
-        >
-          <S.CategoryIcon>{category.icon}</S.CategoryIcon>
-          <S.CategoryName>{category.name}</S.CategoryName>
+      {categories.map(({ id, hashtag, icon, name }) => (
+        <S.CategoryItem key={id} onClick={() => handleCategoryClick(hashtag)}>
+          <S.CategoryIcon>{icon}</S.CategoryIcon>
+          <S.CategoryName>{name}</S.CategoryName>
         </S.CategoryItem>
       ))}
     </S.CategoryContainer>
