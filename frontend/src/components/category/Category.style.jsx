@@ -1,20 +1,23 @@
-.category-container {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    padding: 35px;
-}
+import styled from "styled-components";
 
-.category-item {
+export const CategoryContainer = styled.div`
     display: flex;
-    flex-direction: column; /* 아이콘 위, 텍스트 아래 */
-    align-items: center; /* 수직 정렬 */
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+    padding: 35px;
+`;
+
+export const CategoryItem = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     cursor: pointer;
-}
-  
+`;
+
 /* 아이콘 감싸는 원형 배경 */
-.category-icon {
+export const CategoryIcon = styled.div`
     width: 56px;
     height: 56px;
     background-color: #FFBF8766;
@@ -24,12 +27,11 @@
     justify-content: center;
     font-size: 24px;
     color: #000;
-}
+`;
 
-.category-name {
+export const CategoryName = styled.span`
     margin-top: 8px;
     font-size: 13px;
     font-weight: bold;
     color: #000;
-}
-  
+`;

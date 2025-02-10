@@ -1,48 +1,20 @@
 // TODO: import React 제거
 // https://so-so.dev/react/import-react-from-react/
-import React from "react";
-import "./SaveFolder.css";
-import imageIcon from "../images/imageicon.png";
+import imageIcon from "../../images/imageicon.png";
+import * as S from "./SaveFolder.style";
 
-const SaveFolder = ({
-  imageUrl1,
-  imageUrl2,
-  imageUrl3,
-  imageUrl4,
-  folderName,
-}) => {
+const SaveFolder = ({ imageUrls, folderName }) => {
+  const images = imageUrls.length > 0 ? imageUrls : [imageIcon];
+
   return (
-    <div className="save-folder">
-      <div className="image-container">
-        {imageUrl1 ? (
-          <img src={imageUrl1} className="place-image1" />
-        ) : (
-          <img src={imageIcon} className="no-img" />
-        )}
-        {imageUrl2 ? (
-          <img src={imageUrl2} className="place-image1" />
-        ) : (
-          <img src={imageIcon} className="no-img" />
-        )}
-        {imageUrl3 ? (
-          <img src={imageUrl3} className="place-image1" />
-        ) : (
-          <img src={imageIcon} className="no-img" />
-        )}
-        {imageUrl4 ? (
-          <img src={imageUrl4} className="place-image1" />
-        ) : (
-          <img src={imageIcon} className="no-img" />
-        )}
-      </div>
-      <div>
-        {folderName ? (
-          <p className="folder-name">{folderName}</p>
-        ) : (
-          <p className="folder-name">폴더</p>
-        )}
-      </div>
-    </div>
+    <S.SaveFolder>
+      <S.ImageContainer>
+        {images.map((url, index) => (
+          <S.PlaceImage key={index} src={url || imageIcon} />
+        ))}
+      </S.ImageContainer>
+      <S.FolderName>{folderName || "폴더"}</S.FolderName>
+    </S.SaveFolder>
   );
 };
 

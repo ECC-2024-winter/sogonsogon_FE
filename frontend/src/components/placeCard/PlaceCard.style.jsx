@@ -1,5 +1,6 @@
-/* PlaceCard */
-.place-card {
+import styled from "styled-components";
+
+export const PlaceCard = styled.div`
     width: 261.33px;
     height: 347px;
     box-sizing: border-box;
@@ -12,10 +13,9 @@
     flex-direction: column;
     align-items: center;
     border: 1px solid #ddd;
-}
-  
-/* 이미지 컨테이너 */
-.place-card .image-container {
+`;
+
+export const ImageContainer = styled.div`
     width: 229.33px;
     height: 247px;
     background-color: #f0f0f0;
@@ -24,57 +24,49 @@
     justify-content: flex-start;
     border-radius: 8px;
     overflow: hidden;
-}
-  
-.place-card .place-image {
+`;
+
+export const PlaceImage = styled.img`
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     margin-left: 0;
-}
+`;
   
-.place-card .placeholder-text {
+export const PlaceholderText = styled.span`
     font-size: 14px;
     color: #aaa;
-}
-  
-/* 텍스트 프레임 */
-.place-card .frame {
+`
+export const TextFrame = styled.div`
     width: 100%;
     padding: 8px;
-}
+`;
   
-.place-card .frame-2 {
+export const NameSave = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-}
+`;
   
-/* 장소 이름 */
-.place-card .place-name {
+export const PlaceName = styled.h3`
     font-size: 20px;
     font-weight: bold;
     color: #333;
     margin: 0;
-}
+`;
   
-/* 하트 버튼 컨테이너 */
-.place-card .heart-button-container {
+export const HeartbuttonContainer = styled.div`
     display: flex;
     align-items: center;
-}
-  
-/* 장소 위치 */
-.place-card .place-info {
+`;
+
+export const PlaceLocation = styled.p`
     width: 100%;
     text-align: left;
-}
-  
-.place-card .place-location {
     font-size: 16px;
     color: #555;
-    margin: 0;
+    margin-left: 40px;
     padding: 0px 20px;
-}  
+`;
