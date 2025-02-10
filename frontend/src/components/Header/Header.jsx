@@ -1,22 +1,27 @@
-import React from "react";
-import './Header.css'
-import logo from '../../images/logo.png'
+import logo from "../../images/logo.png";
+import * as S from "./Header.style"; // Import your styled-components
 
 function Header() {
-    return (
-        <div className='header'>
-            <header className='headerObj'>
-                <img src={logo}/>
-                <nav>
-                    <ul className='nav-links'>
-                        <li><a href='/savelist'>저장 목록</a></li>
-                        <li><a href='/memo'>기록</a></li>
-                        <li><a href='/account'>내 계정</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
-    );
+  return (
+    <S.Header>
+      <S.HeaderObj>
+        <S.Img src={logo} alt="Logo" />
+        <nav>
+          <S.NavLinks>
+            <S.NavLinkItem>
+              <S.StyledLink href="/savelist">저장 목록</S.StyledLink>
+            </S.NavLinkItem>
+            <S.NavLinkItem>
+              <S.StyledLink href="/memo">기록</S.StyledLink>
+            </S.NavLinkItem>
+            <S.NavLinkItem>
+              <S.StyledLink href="/account">내 계정</S.StyledLink>
+            </S.NavLinkItem>
+          </S.NavLinks>
+        </nav>
+      </S.HeaderObj>
+    </S.Header>
+  );
 }
 
 export default Header;
