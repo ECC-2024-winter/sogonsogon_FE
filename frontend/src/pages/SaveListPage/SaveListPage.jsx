@@ -43,7 +43,6 @@ const folders = [
 function SaveListPage() {
   return (
     <div>
-      <Header />
       <S.SaveTitle>저장 목록</S.SaveTitle>
       <S.SaveFolders>
         <S.SaveFolderContainer>

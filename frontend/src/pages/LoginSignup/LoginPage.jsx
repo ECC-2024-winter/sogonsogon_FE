@@ -14,7 +14,6 @@ const LoginPage = () => {
     
     return (
         <div>
-            <Header />
             <LogInContainer title="로그인">
             <InputField label="이메일 주소" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <InputField label="비밀번호" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
