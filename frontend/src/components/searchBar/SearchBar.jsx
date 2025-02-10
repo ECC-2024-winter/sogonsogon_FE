@@ -17,9 +17,9 @@ const SearchBar = () => {
 
   return (
     <S.SearchContainer>
-      <S.SearchBar onSubmit={handleSearch}>
+      <S.SearchBar id="search" onSubmit={handleSearch}>
         <S.SearchInput
-          type="text"
+          type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="지역/장소/활동 등을 검색하세요."
