@@ -1,17 +1,21 @@
 import Header from "../../components/Header/Header";
 import SaveFolder from "../../components/saveFolder/SaveFolder";
-import "./SaveListPage.css";
+import * as S from "./SaveListPage.style";
 
 /*가상 데이터*/
 const folders = [
   {
     id: 1,
+    imageUrl: [],
     folderName: "혼밥 맛집",
   },
   {
     id: 2,
     imageUrl: [
       "https://blog.kakaocdn.net/dn/dizeYM/btrN5vZONwk/0ShfJor6t6KANhKzI3Qr1k/img.jpg",
+      "https://storage.heypop.kr/assets/2024/02/26114133/main.1-scaled.jpg",
+      "https://www.visitseoul.net/comm/getImage?srvcId=MEDIA&parentSn=49036&fileTy=MEDIA&fileNo=1",
+      "https://www.visitseoul.net/comm/getImage?srvcId=MEDIA&parentSn=49035&fileTy=MEDIA&fileNo=1",
     ],
     folderName: "북카페/ 작업하기 좋은 카페",
   },
@@ -22,6 +26,7 @@ const folders = [
   },
   {
     id: 4,
+    imageUrl: [],
     folderName: "망원동 소품샵",
   },
   {
@@ -31,41 +36,24 @@ const folders = [
   },
   {
     id: 6,
-  },
-  {
-    id: 7,
-  },
-  {
-    id: 8,
-  },
-  {
-    id: 9,
-  },
-  {
-    id: 10,
+    imageUrl: [],
+    folderName: null,
   },
 ];
 
 function SaveListPage() {
   return (
-    <div className="save-list-page">
+    <div>
       <Header />
-      <div className="save-title">저장 목록</div>
-      <div className="save-folders">
-        <div className="save-folder-container">
+      <S.SaveTitle>저장 목록</S.SaveTitle>
+      <S.SaveFolders>
+        <S.SaveFolderContainer>
           {/* TODO: 디스트럭처링 필요 */}
-          {folders.map((folder) => (
-            <SaveFolder
-              key={folder.id}
-              imageUrl1={folder.imageUrl1}
-              imageUrl2={folder.imageUrl2}
-              imageUrl3={folder.imageUrl3}
-              imageUrl4={folder.imageUrl4}
-              folderName={folder.folderName}
-            />
+          {folders.map(({ id, imageUrl, folderName }) => (
+            <SaveFolder key={id} imageUrls={imageUrl} folderName={folderName} />
           ))}
-        </div>
-      </div>
+        </S.SaveFolderContainer>
+      </S.SaveFolders>
     </div>
   );
 }
