@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import { BiSolidEdit } from 'react-icons/bi';
 
-function Button({ disabled, children }) {
+function Button({ disabled, children, onClick }) {
   return (
-    <StyledButton disabled={disabled}>
+    <StyledButton disabled={disabled} onClick={onClick}>
       <BiSolidEdit />
       &nbsp;
       {children}

@@ -1,7 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-function Button({ disabled, children }) {
-  return <StyledButton disabled={disabled}>{children}</StyledButton>;
+function Button({ disabled, children, onClick }) {
+  return (
+    <StyledButton disabled={disabled} onClick={onClick}>
+      {children}
+    </StyledButton>
+  );
 }
 
 const StyledButton = styled.button`
@@ -13,7 +17,7 @@ const StyledButton = styled.button`
   color: #000000;
   font-weight: 500;
   font-size: 12px;
-  font-family: "Pretendard";
+  font-family: 'Pretendard';
   cursor: pointer;
   padding: 8px 12px;
   background: #ffbf87;
