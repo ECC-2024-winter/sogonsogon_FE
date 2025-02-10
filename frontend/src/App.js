@@ -1,15 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainPage from "./pages/MainPage/MainPage";
-import LoginPage from "./pages/LoginSignup/LoginPage";
-import SignupPage from "./pages/LoginSignup/SignupPage";
-import "./App.css";
-import SaveListPage from "./pages/SaveListPage/SaveListPage";
-import SaveFolder from "./components/saveFolder/SaveFolder";
+import { MainPage, LoginPage, SignupPage, SaveListPage } from "./pages";
+import { Header } from "../src/components"
 
 function App() {
   return (
-    <div className="App">
       <Router>
+        <Header />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -17,7 +13,6 @@ function App() {
           <Route path="/savelist" element={<SaveListPage />} />
         </Routes>
       </Router>
-    </div>
   );
 }
 
