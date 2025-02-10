@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-import Header from "../../components/Header/Header";
-import LogInContainer from "../../components/LoginSignup/LogInContainer";
-import InputField from "../../components/LoginSignup/InputField";
-import Button from "../../components/common/Button/ButtonLogin";
-import "./LoginSignup.css"
+import { useState } from "react";
+import { Header, LogInContainer, InputField, ButtonLogin } from "../../components";
+import * as S from "./LoginSignup.style";
 
 const SignupPage = () => {
   const [nickname, setNickname] = useState("");
@@ -11,24 +8,23 @@ const SignupPage = () => {
   const [password, setPassword] = useState("");
   const [agree, setAgree] = useState(false);
 
-  const handleRegister = () => {
+  const handleSignup = () => {
     console.log("회원가입:", { nickname, email, password, agree });
   };
 
   return (
-      <div className= "SignupPage">
-        <Header></Header>
+      <div>
+        <Header />
         <LogInContainer title="회원가입">
         <InputField label="닉네임" type="text" value={nickname} onChange={(e) => setNickname(e.target.value)} />
         <InputField label="이메일 주소" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <InputField label="비밀번호" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <S.CheckboxContainer>
+        <S.HiddenCheckbox id="check" checked={agree} onChange={() => setAgree(!agree)}></S.HiddenCheckbox>
+        <S.CheckButton htmlFor="check" $checked={agree}> [필수] 서비스 이용 약관에 동의합니다.</S.CheckButton>
+        </S.CheckboxContainer>
 
-        <div className="checkbox-container">
-        <input type="checkbox" id="check" checked={agree} onChange={() => setAgree(!agree)} />
-        <label htmlFor="check"> [필수] 서비스 이용 약관에 동의합니다.</label>
-        </div>
-
-        <Button text="회원가입" onClick={handleRegister} disabled={!agree} />
+        <ButtonLogin text="회원가입" onClick={handleSignup} disabled={!agree} />
         </LogInContainer>
       </div>
     

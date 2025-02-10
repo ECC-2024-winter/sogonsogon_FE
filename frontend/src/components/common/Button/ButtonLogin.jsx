@@ -1,12 +1,11 @@
-import React from "react";
-import "../../../pages/LoginSignup/LoginSignup.css"
+import * as S from "../../../pages/LoginSignup/LoginSignup.style"
 
-const Button = ({ text, onClick, disabled }) => {
+const ButtonLogin = ({ text, onClick, disabled }) => {
   return (
-    <button className="button-login" onClick={onClick} disabled={disabled}>
+    <S.ButtonLogin onClick={onClick} disabled={disabled}>
       {text}
-    </button>
+    </S.ButtonLogin>
   );
 };
 
-export default Button;
+export default ButtonLogin;

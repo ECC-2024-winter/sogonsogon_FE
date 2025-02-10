@@ -1,5 +1,4 @@
-import Header from "../../components/Header/Header";
-import SaveFolder from "../../components/saveFolder/SaveFolder";
+import { Header, SaveFolder } from "../../components";
 import * as S from "./SaveListPage.style";
 
 /*가상 데이터*/

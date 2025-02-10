@@ -1,7 +1,7 @@
 import React, { forwardRef, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import '../styles/Calendar.css'
+import './Calendar.css'
 import {ko} from "date-fns/locale";
 
 const Calendar = () => {
