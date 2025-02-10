@@ -14,7 +14,6 @@ const SignupPage = () => {
 
   return (
       <div>
-        <Header />
         <LogInContainer title="회원가입">
         <InputField label="닉네임" type="text" value={nickname} onChange={(e) => setNickname(e.target.value)} />
         <InputField label="이메일 주소" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
