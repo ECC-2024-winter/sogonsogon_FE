@@ -1,5 +1,7 @@
 import { Header, SaveFolder } from '../../components';
+import { useState } from 'react';
 import ButtonEdit from '../../components/common/Button/ButtonEdit';
+import ModalEdit from '../../components/Modal/ModalEdit/ModalEdit';
 import * as S from './SaveListPage.style';
 
 /*가상 데이터*/
@@ -42,12 +44,21 @@ const folders = [
 ];
 
 function SaveListPage() {
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div>
       <Header />
       <S.SaveTitleWrapper>
         <S.SaveTitle>저장 목록</S.SaveTitle>
-        <ButtonEdit>편집하기</ButtonEdit>
+        <ButtonEdit
+          type="button"
+          onClick={() => {
+            setOpenModal(true);
+          }}>
+          편집하기
+        </ButtonEdit>
+        {openModal ? <ModalEdit openModal={openModal} setOpenModal={setOpenModal} /> : null}
       </S.SaveTitleWrapper>
       <S.SaveFolders>
         <S.SaveFolderContainer>
