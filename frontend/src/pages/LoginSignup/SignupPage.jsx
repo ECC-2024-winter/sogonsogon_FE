@@ -1,8 +1,5 @@
 import { useState } from "react";
-import Header from "../../components/Header/Header";
-import LogInContainer from "../../components/LoginSignup/LogInContainer";
-import InputField from "../../components/LoginSignup/InputField";
-import Button from "../../components/common/Button/ButtonLogin";
+import { Header, LogInContainer, InputField, ButtonLogin } from "../../components";
 import * as S from "./LoginSignup.style";
 
 const SignupPage = () => {
@@ -27,7 +24,7 @@ const SignupPage = () => {
         <S.CheckButton htmlFor="check" $checked={agree}> [필수] 서비스 이용 약관에 동의합니다.</S.CheckButton>
         </S.CheckboxContainer>
 
-        <Button text="회원가입" onClick={handleSignup} disabled={!agree} />
+        <ButtonLogin text="회원가입" onClick={handleSignup} disabled={!agree} />
         </LogInContainer>
       </div>
     

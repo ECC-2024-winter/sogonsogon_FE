@@ -1,7 +1,4 @@
-import Header from "../../components/Header/Header";
-import SearchOutlined from "../../components/searchBar/SearchBar";
-import PlaceCard from "../../components/placeCard/PlaceCard";
-import Category from "../../components/category/Category";
+import { Header, SearchBar, PlaceCard, Category } from "../../components";
 import * as S from "./Main.style";
 
 // 임시 데이터
@@ -50,7 +47,7 @@ function MainPage() {
   return (
     <div>
       <Header />
-      <SearchOutlined />
+      <SearchBar />
       <Category />
       <S.RecommendationContainer>
         {/* TODO: 디스트럭쳐링 해봅시다 */}
