@@ -1,6 +1,6 @@
 import * as S from "../../../pages/LoginSignup/LoginSignup.style"
 
-const Button = ({ text, onClick, disabled }) => {
+const ButtonLogin = ({ text, onClick, disabled }) => {
   return (
     <S.ButtonLogin onClick={onClick} disabled={disabled}>
       {text}
@@ -8,4 +8,4 @@ const Button = ({ text, onClick, disabled }) => {
   );
 };
 
-export default Button;
+export default ButtonLogin;
