@@ -1,17 +1,19 @@
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import ButtonBasic from '../../common/Button/ButtonBasic';
+import * as S from './Edit.style';
 
 const Folder = ({ folder, onToggle, onRemove }) => {
   return (
-    <div className="FolderNameContainer" onClick={() => onToggle(folder.id)}>
-      {folder.folderName}
-      <button
+    <S.FolderNameContainer onClick={() => onToggle(folder.id)}>
+      <S.FolderName>{folder.folderName}</S.FolderName>
+      <ButtonBasic
         onClick={e => {
           e.stopPropagation();
           onRemove(folder.id);
         }}>
         <RiDeleteBin6Line />
-      </button>
-    </div>
+      </ButtonBasic>
+    </S.FolderNameContainer>
   );
 };
 
