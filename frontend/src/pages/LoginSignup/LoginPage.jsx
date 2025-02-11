@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Header, LogInContainer, InputField, ButtonLogin } from "../../components";
+import { LogInContainer, InputField, ButtonLogin } from "../../components";
 import * as S from "./LoginSignup.style"
 
 const LoginPage = () => {
