@@ -1,8 +1,11 @@
 import styled from 'styled-components';
+import { BiSolidEdit } from 'react-icons/bi';
 
 function Button({ disabled, children, onClick }) {
   return (
     <StyledButton disabled={disabled} onClick={onClick}>
+      <BiSolidEdit />
+      &nbsp;
       {children}
     </StyledButton>
   );
@@ -13,14 +16,14 @@ const StyledButton = styled.button`
   align-items: center;
   outline: none;
   border: none;
-  border-radius: 100px;
+  border-radius: 10px;
   color: #000000;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 16px;
   font-family: 'Pretendard';
   cursor: pointer;
   padding: 8px 12px;
-  background: #ffbf87;
+  background: #ffffff;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
 
@@ -28,7 +31,7 @@ const StyledButton = styled.button`
 
   &:active,
   &:hover {
-    background: var(--button-hover-bg-color, rgb(252, 181, 118));
+    background: var(--button-hover-bg-color, rgb(247, 244, 244));
   }
 `;
 
