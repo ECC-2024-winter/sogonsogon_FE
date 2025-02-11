@@ -6,9 +6,14 @@ export const PageTop = styled.div`
   margin-left: 200px;
 `;
 
-export const BackIcon = styled.div`
+export const BackIcon = styled.a`
   font-size: 32px;
   margin-right: 20px;
+  color: #000000;
+
+  &:hover {
+    color: var(--button-hover-color, #ffbf87);
+  }
 `;
 export const SaveTitle = styled.div`
   color: #000000;
