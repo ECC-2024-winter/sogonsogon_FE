@@ -1,4 +1,4 @@
-import { Header, SearchBar, PlaceCard, Category } from "../../components";
+import { SearchBar, PlaceCard, Category } from "../../components";
 import * as S from "./Main.style";
 
 // 임시 데이터
