@@ -9,3 +9,6 @@ export { default as LogInContainer } from './LoginSignup/LogInContainer';
 export { default as PlaceCard } from './placeCard/PlaceCard';
 export { default as SaveFolder } from './saveFolder/SaveFolder';
 export { default as SearchBar } from './searchBar/SearchBar';
+
+export * from './Modal';
+export * from './common';

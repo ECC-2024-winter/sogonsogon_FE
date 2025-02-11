@@ -10,6 +10,7 @@ export const SaveFolder = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const ImageContainer = styled.div`
@@ -26,6 +27,9 @@ export const ImageContainer = styled.div`
 
   &:hover {
 		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: all 0.2s linear;
+  }
 `;
 
 export const PlaceImage = styled.img`
