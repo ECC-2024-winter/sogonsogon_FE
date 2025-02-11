@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SaveFolder = styled.div`
   border: none;
@@ -10,6 +10,7 @@ export const SaveFolder = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const ImageContainer = styled.div`
@@ -23,6 +24,11 @@ export const ImageContainer = styled.div`
   border-radius: 12px;
   gap: 2px;
   padding: 0px;
+
+  &:hover {
+    transform: scale(0.9);
+    transition: all 0.2s linear;
+  }
 `;
 
 export const PlaceImage = styled.img`
@@ -48,7 +54,6 @@ export const PlaceHolderText = styled.div`
 `;
 
 export const FolderName = styled.div`
-  font-family: "Pretendard";
   font-size: 20px;
   font-weight: 500;
   color: #000000;

@@ -1,8 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-    height: 1000px;
-`;
+export const Wrapper = styled.div``;
+
 export const PlaceCardContainer = styled.div`
   display: grid;
   justify-content: center;

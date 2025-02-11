@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { BiSolidEdit } from 'react-icons/bi';
 
-function Button({ disabled, children, onClick }) {
+export function ButtonEdit({ disabled, children, onClick }) {
   return (
     <StyledButton disabled={disabled} onClick={onClick}>
       <BiSolidEdit />
@@ -34,5 +34,3 @@ const StyledButton = styled.button`
     background: var(--button-hover-bg-color, rgb(247, 244, 244));
   }
 `;
-
-export default Button;

@@ -1,21 +1,30 @@
-import logo from "../../images/logo.png";
-import * as S from "./Header.style"; // Import your styled-components
+import logo from '../../images/logo.png';
+import * as S from './Header.style'; // Import your styled-components
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
     <S.Header>
       <S.HeaderObj>
-        <S.Img src={logo} alt="Logo" />
+        <Link to="/">
+          <S.Img src={logo} alt="Logo" />
+        </Link>
         <nav>
           <S.NavLinks>
             <S.NavLinkItem>
-              <S.StyledLink href="/savelist">저장 목록</S.StyledLink>
+              <Link to="/savelist">
+                <S.StyledLink>저장 목록</S.StyledLink>
+              </Link>
             </S.NavLinkItem>
             <S.NavLinkItem>
-              <S.StyledLink href="/memo">기록</S.StyledLink>
+              <Link to="/memo">
+                <S.StyledLink>기록</S.StyledLink>
+              </Link>
             </S.NavLinkItem>
             <S.NavLinkItem>
-              <S.StyledLink href="/account">내 계정</S.StyledLink>
+              <Link to="/account">
+                <S.StyledLink>내 계정</S.StyledLink>
+              </Link>
             </S.NavLinkItem>
           </S.NavLinks>
         </nav>

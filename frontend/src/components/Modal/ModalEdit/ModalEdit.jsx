@@ -1,11 +1,10 @@
-import { useState } from 'react';
 import ButtonModal from '../../common/Button/ButtonModal';
 import ButtonBasic from '../../common/Button/ButtonBasic';
 import { IoMdClose } from 'react-icons/io';
 import Edit from './Edit';
 import * as S from './ModalEdit.style';
 
-const ModalEdit = ({ openModal, setOpenModal }) => {
+export const ModalEdit = ({ openModal, setOpenModal }) => {
   return (
     <S.Overlay>
       <S.EditContainer>
@@ -36,5 +35,3 @@ const ModalEdit = ({ openModal, setOpenModal }) => {
     </S.Overlay>
   );
 };
-
-export default ModalEdit;

@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Header = styled.div`
-  background-color: white;
   display: flex;
   justify-content: center;
   padding-top: 20px;
@@ -28,12 +27,15 @@ export const NavLinks = styled.ul`
 export const NavLinkItem = styled.li`
   display: inline-block;
   margin-right: 3rem;
+
+  & > a {
+    text-decoration: none;
+  }
 `;
 
-export const StyledLink = styled.a`
-  text-decoration: none;
+export const StyledLink = styled.span`
   color: black;
-  font-size: 0.8rem;
+  font-size: 16px;
   font-weight: 700;
   transition: color 0.3s;
 

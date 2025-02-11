@@ -1,6 +1,6 @@
-import { useState } from "react";
-import HeartButton from "../common/Button/HeartButton/HeartButton";
-import * as S from "./PlaceCard.style";
+import { useState } from 'react';
+import HeartButton from '../common/Button/HeartButton/HeartButton';
+import * as S from './PlaceCard.style';
 
 const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
   const [saved, setSaved] = useState(false);
@@ -17,7 +17,7 @@ const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
       {/* 이미지 영역 */}
       <S.ImageContainer>
         {imageUrl ? (
-          <S.PlaceImage src={imageUrl} alt={placeName}/>
+          <S.PlaceImage src={imageUrl} alt={placeName} />
         ) : (
           <S.PlaceholderText>이미지 없음</S.PlaceholderText>
         )}
