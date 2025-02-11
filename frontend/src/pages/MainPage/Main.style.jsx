@@ -1,12 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const RecommendationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 24px;
 `;
 
 export const RecommendationSection = styled.div`
+  margin: 0 auto;
   margin-top: 32px;
 `;
 
@@ -15,7 +16,6 @@ export const RecommendationTitle = styled.h2`
   font-weight: bold;
   margin-bottom: 16px;
   text-align: left;
-  margin-left: 20%;
 `;
 
 export const PlaceCardContainer = styled.div`

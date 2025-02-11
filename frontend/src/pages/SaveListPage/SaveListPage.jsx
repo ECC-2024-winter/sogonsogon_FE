@@ -1,7 +1,5 @@
-import { Header, SaveFolder } from '../../components';
 import { useState } from 'react';
-import ButtonEdit from '../../components/common/Button/ButtonEdit';
-import ModalEdit from '../../components/Modal/ModalEdit/ModalEdit';
+import { SaveFolder, ButtonEdit, ModalEdit } from '../../components';
 import * as S from './SaveListPage.style';
 
 /*가상 데이터*/
@@ -48,7 +46,6 @@ function SaveListPage() {
 
   return (
     <div>
-      <Header />
       <S.SaveTitleWrapper>
         <S.SaveTitle>저장 목록</S.SaveTitle>
         <ButtonEdit
