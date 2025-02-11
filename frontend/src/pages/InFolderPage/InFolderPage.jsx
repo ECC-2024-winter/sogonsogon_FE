@@ -39,7 +39,7 @@ function InFolderPage() {
       {folders.map(({ folderName, places }) => (
         <div key={folderName}>
           <S.PageTop>
-            <S.BackIcon>
+            <S.BackIcon href="/savelist">
               <IoArrowBackSharp />
             </S.BackIcon>
             <S.SaveTitle>{folderName}</S.SaveTitle>
