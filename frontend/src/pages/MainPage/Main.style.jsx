@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
+export const MainContainer = styled.div``;
+
 export const RecommendationContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
 `;
 
 export const RecommendationSection = styled.div`

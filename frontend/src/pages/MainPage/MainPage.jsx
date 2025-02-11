@@ -4,7 +4,7 @@ import * as S from './Main.style';
 // 임시 데이터
 const recommendations = [
   {
-    title: '이번 주 가장 많이 뜨고 있는 Top 3',
+    title: '🔥 이번 주 가장 많이 뜨고 있는 Top 3',
     places: [
       {
         id: 1,
@@ -14,26 +14,27 @@ const recommendations = [
       },
       {
         id: 2,
+        imageUrl: '',
         placeName: '프로토콜 연희점',
         location: '서울 서대문구 연희로 10길 2층',
       },
-      { id: 3, placeName: '장소', location: '위치' },
+      { id: 3, imageUrl: '', placeName: '장소', location: '위치' },
     ],
   },
   {
-    title: '이 달의 맛집 Best 3',
+    title: '👍 이 달의 맛집 Best 3',
     places: [
-      { id: 4, placeName: '장소', location: '위치' },
-      { id: 5, placeName: '장소', location: '위치' },
-      { id: 6, placeName: '장소', location: '위치' },
+      { id: 4, imageUrl: '', placeName: '장소', location: '위치' },
+      { id: 5, imageUrl: '', placeName: '장소', location: '위치' },
+      { id: 6, imageUrl: '', placeName: '장소', location: '위치' },
     ],
   },
   {
-    title: '이런 장소는 어때요?',
+    title: '😎 이런 장소는 어때요?',
     places: [
-      { id: 7, placeName: '장소', location: '위치' },
-      { id: 8, placeName: '장소', location: '위치' },
-      { id: 9, placeName: '장소', location: '위치' },
+      { id: 7, imageUrl: '', placeName: '장소', location: '위치' },
+      { id: 8, imageUrl: '', placeName: '장소', location: '위치' },
+      { id: 9, imageUrl: '', placeName: '장소', location: '위치' },
     ],
   },
 ];
@@ -44,7 +45,7 @@ function MainPage() {
   };
 
   return (
-    <div>
+    <S.MainContainer>
       <SearchBar />
       <Category />
       <S.RecommendationContainer>
@@ -57,13 +58,20 @@ function MainPage() {
             {/* PlaceCard 가로 정렬 */}
             <S.PlaceCardContainer>
               {places.map(({ id, imageUrl, placeName, location }) => (
-                <PlaceCard key={id} imageUrl={imageUrl} placeName={placeName} location={location} onSave={handleSave} />
+                <PlaceCard
+                  key={id}
+                  // NOTE: API 연동 전 임시 랜덤 이미지 적용
+                  imageUrl={imageUrl || `https://picsum.photos/600/400?random=${id}`}
+                  placeName={placeName}
+                  location={location}
+                  onSave={handleSave}
+                />
               ))}
             </S.PlaceCardContainer>
           </S.RecommendationSection>
         ))}
       </S.RecommendationContainer>
-    </div>
+    </S.MainContainer>
   );
 }
 
