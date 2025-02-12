@@ -26,6 +26,7 @@ export const ImageContainer = styled.div`
   padding: 0px;
 
   &:hover {
+		box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
     transform: scale(0.9);
     transition: all 0.2s linear;
   }
@@ -54,6 +55,7 @@ export const PlaceHolderText = styled.div`
 `;
 
 export const FolderName = styled.div`
+  font-family: 'Pretendard';
   font-size: 20px;
   font-weight: 500;
   color: #000000;
