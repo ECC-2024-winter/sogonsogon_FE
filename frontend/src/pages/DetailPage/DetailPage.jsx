@@ -1,4 +1,6 @@
 import * as S from './DetailPage.style';
+import { Link } from 'react-router-dom';
+import { ModalMemo } from '../../components';
 import HeartButton from '../../components/common/Button/HeartButton/HeartButton';
 import { useState } from 'react';
 import { IoStar } from 'react-icons/io5';
@@ -25,6 +27,8 @@ const DetailPage = ({ onSave }) => {
       onSave();
     }
   };
+
+  const [openModal, setOpenModal] = useState(false);
 
   return (
     <div>
@@ -67,7 +71,14 @@ const DetailPage = ({ onSave }) => {
         </S.MemoTitle>
         <S.Memo>
           <S.InputField type="text" placeholder="오늘의 이 장소는 어땠나요?" />
-          <S.AddButton>등록</S.AddButton>
+          <S.AddButton
+            type="button"
+            onClick={() => {
+              setOpenModal(true);
+            }}>
+            등록
+          </S.AddButton>
+          {openModal ? <ModalMemo openModal={openModal} setOpenModal={setOpenModal} /> : null}
         </S.Memo>
       </S.MemoContainer>
     </div>

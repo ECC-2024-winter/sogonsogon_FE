@@ -73,6 +73,7 @@ export const Rating = styled.div`
   font-weight: 400;
 `;
 
+//별 아이콘
 export const Star = styled.div`
   color: #ffbf87;
 `;
@@ -96,12 +97,14 @@ export const MemoContainer = styled.div`
   border: 1px solid #d9d9d9;
 `;
 
+//연필 아이콘 색상
 export const Pencil = styled.div`
   color: #ffbf87;
   font-size: 22px;
   margin-right: 5px;
 `;
 
+//"쉬었다 간 흔적을 남겨주세요"
 export const Text = styled.div`
   font-family: Inter;
   font-weight: 400;
@@ -112,6 +115,7 @@ export const Text = styled.div`
   margin-left: 18px;
 `;
 
+//"기록하기"
 export const MemoTitle = styled.div`
   display: flex;
   align-items: center;
@@ -122,11 +126,13 @@ export const MemoTitle = styled.div`
   margin-left: 50px;
 `;
 
+//입력창+등록버튼
 export const Memo = styled.div`
   display: flex;
   align-items: center;
 `;
 
+//입력창
 export const InputField = styled.input`
   display: flex;
   align-items: center;
@@ -142,6 +148,7 @@ export const InputField = styled.input`
   border-radius: 15px;
 `;
 
+//등록버튼
 export const AddButton = styled.button`
   color: #000000;
   background-color: #ffe5cf;
