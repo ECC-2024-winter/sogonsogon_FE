@@ -24,7 +24,7 @@ const Category = () => {
 
   const handleCategoryClick = hashtag => {
     // TODO: 왜 encodeURI 했는지 공부
-    navigate(`/search?query=${encodeURIComponent(hashtag)}`);
+    navigate(`/results?query=${encodeURIComponent(hashtag)}`);
   };
 
   return (
