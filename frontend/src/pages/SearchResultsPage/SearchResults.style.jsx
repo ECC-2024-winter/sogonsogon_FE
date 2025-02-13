@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div``;
-
 export const PlaceCardContainer = styled.div`
   display: grid;
   justify-content: center;
@@ -13,13 +11,28 @@ export const PlaceCardContainer = styled.div`
 `;
 
 export const PaginationContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-`;
+  .pagination {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
 
-export const Pagination = styled.ul`
-  display: flex;
-  list-style: none;
-  padding: 0;
+    > * {
+      cursor: pointer;
+    }
+  }
+
+  .page-link {
+    transition: all 0.25s;
+    padding: 0.2rem 0.6rem;
+    border-radius: 0.3rem;
+  }
+
+  .active {
+    background-color: #ffbf87;
+    border-radius: 20px;
+    color: white;
+  }
 `;
