@@ -1,25 +1,35 @@
-import { useState } from "react";
-import { HeartOutlined, HeartFilled } from "@ant-design/icons";
-import * as S from "./HeartButton.style";
+import { useState, useEffect } from 'react';
+import { HeartOutlined, HeartFilled } from '@ant-design/icons';
+import * as S from './HeartButton.style';
+import { ModalSave } from '../../../Modal/ModalSave/ModalSave';
 
-// TODO: function 컴포넌트로 수정
 const HeartButton = () => {
   const [isChecked, setIsChecked] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
 
   const onClick = () => {
-    setIsChecked((prev) => !prev);
+    setIsChecked(prev => !prev);
   };
 
+  useEffect(() => {
+    if (isChecked) {
+      setOpenModal(true);
+    }
+  }, [isChecked]);
+
   return (
-    <S.Button onClick={onClick}>
-      {isChecked ? (
-        <S.Orange>
-          <HeartFilled />
-        </S.Orange>
-      ) : (
-        <HeartOutlined />
-      )}
-    </S.Button>
+    <div>
+      <S.Button onClick={onClick}>
+        {isChecked ? (
+          <S.Orange>
+            <HeartFilled />
+          </S.Orange>
+        ) : (
+          <HeartOutlined />
+        )}
+      </S.Button>
+      {openModal ? <ModalSave openModal={openModal} setOpenModal={setOpenModal} /> : null}
+    </div>
   );
 };
 
