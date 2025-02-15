@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-function Button({ disabled, children, onClick }) {
+function ButtonBasic({ disabled, children, onClick }) {
   return (
     <StyledButton disabled={disabled} onClick={onClick}>
       {children}
@@ -28,4 +28,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export default Button;
+export default ButtonBasic;
