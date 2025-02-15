@@ -1,11 +1,10 @@
 import * as S from './DetailPage.style';
 import { LuPenLine } from 'react-icons/lu';
-import { FaRegTrashAlt } from 'react-icons/fa';
+import { FaRegTrashAlt, FaPen } from 'react-icons/fa';
 import { IoStar } from 'react-icons/io5';
-import { FaPen } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import StarNumber from '../../components/common/StarNumber';
 import { ModalMemo } from '../../components';
+import { ModalMemoDelete, ModalMemoEdit } from '../../components';
 import HeartButton from '../../components/common/Button/HeartButton/HeartButton';
 import { useState } from 'react';
 
@@ -38,7 +37,10 @@ export const DetailPage = ({ onSave }) => {
     }
   };
 
-  const [openModal, setOpenModal] = useState(false);
+  // 각 모달에 대한 개별 상태
+  const [openModalMemo, setOpenModalMemo] = useState(false);
+  const [openModalEdit, setOpenModalEdit] = useState(false);
+  const [openModalDelete, setOpenModalDelete] = useState(false);
 
   return (
     <div>
@@ -85,11 +87,11 @@ export const DetailPage = ({ onSave }) => {
           <S.AddButton
             type="button"
             onClick={() => {
-              setOpenModal(true);
+              setOpenModalMemo(true);
             }}>
             등록
           </S.AddButton>
-          {openModal ? <ModalMemo openModal={openModal} setOpenModal={setOpenModal} /> : null}
+          {openModalMemo && <ModalMemo openModal={openModalMemo} setOpenModal={setOpenModalMemo} />}
         </S.Memo>
         <S.Saved>
           <S.SavedMemo>{comment}</S.SavedMemo>
@@ -97,12 +99,24 @@ export const DetailPage = ({ onSave }) => {
             <StarNumber>{myStarRating}</StarNumber>
             <S.SavedDate>{date}</S.SavedDate>
           </S.SavedRating>
-          <S.EditButton>
+          <S.EditButton
+            type="button"
+            onClick={() => {
+              setOpenModalEdit(true);
+            }}>
             <LuPenLine size={20} />
           </S.EditButton>
-          <S.EditButton>
+          {openModalEdit && (
+            <ModalMemoEdit openModal={openModalEdit} setOpenModal={setOpenModalEdit} initialValue={comment} />
+          )}
+          <S.EditButton
+            type="button"
+            onClick={() => {
+              setOpenModalDelete(true);
+            }}>
             <FaRegTrashAlt size={20} />
           </S.EditButton>
+          {openModalDelete && <ModalMemoDelete openModal={openModalDelete} setOpenModal={setOpenModalDelete} />}
         </S.Saved>
       </S.MemoContainer>
     </div>

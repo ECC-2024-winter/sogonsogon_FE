@@ -133,9 +133,10 @@ export const Memo = styled.div`
 `;
 
 //입력창
-export const InputField = styled.input`
+export const InputField = styled.textarea`
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Pretendard';
   font-weight: 500px;
   font-size: 15px;
@@ -143,9 +144,12 @@ export const InputField = styled.input`
   height: 70px;
   text-align: left;
   margin: 10px 0px 10px 50px;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #ffbf87;
   border-radius: 15px;
+
+  resize: none;
+  overflow: hidden;
 `;
 
 //등록버튼
