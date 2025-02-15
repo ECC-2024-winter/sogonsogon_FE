@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SaveFolder, ButtonEdit, ModalEdit } from '../../components';
 import * as S from './SaveListPage.style';
 
@@ -46,25 +47,27 @@ function SaveListPage() {
 
   return (
     <div>
-      <S.SaveTitleWrapper>
-        <S.SaveTitle>저장 목록</S.SaveTitle>
-        <ButtonEdit
-          type="button"
-          onClick={() => {
-            setOpenModal(true);
-          }}>
-          편집하기
-        </ButtonEdit>
-        {openModal ? <ModalEdit openModal={openModal} setOpenModal={setOpenModal} /> : null}
-      </S.SaveTitleWrapper>
-      <S.SaveFolders>
-        <S.SaveFolderContainer>
-          {/* TODO: 디스트럭처링 필요 */}
-          {folders.map(({ id, imageUrl, folderName }) => (
-            <SaveFolder key={id} imageUrls={imageUrl} folderName={folderName} />
-          ))}
-        </S.SaveFolderContainer>
-      </S.SaveFolders>
+      <Link to="/folder" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <S.SaveTitleWrapper>
+          <S.SaveTitle>저장 목록</S.SaveTitle>
+          <ButtonEdit
+            type="button"
+            onClick={() => {
+              setOpenModal(true);
+            }}>
+            편집하기
+          </ButtonEdit>
+          {openModal ? <ModalEdit openModal={openModal} setOpenModal={setOpenModal} /> : null}
+        </S.SaveTitleWrapper>
+        <S.SaveFolders>
+          <S.SaveFolderContainer>
+            {/* TODO: 디스트럭처링 필요 */}
+            {folders.map(({ id, imageUrl, folderName }) => (
+              <SaveFolder key={id} imageUrls={imageUrl} folderName={folderName} />
+            ))}
+          </S.SaveFolderContainer>
+        </S.SaveFolders>
+      </Link>
     </div>
   );
 }

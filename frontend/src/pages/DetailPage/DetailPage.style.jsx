@@ -92,7 +92,7 @@ export const PlaceInfo = styled.p`
 export const MemoContainer = styled.div`
   justify-content: center;
   width: 1300px;
-  height: 300px;
+  height: auto;
   margin: 20px auto;
   border: 1px solid #d9d9d9;
 `;
@@ -133,9 +133,10 @@ export const Memo = styled.div`
 `;
 
 //입력창
-export const InputField = styled.input`
+export const InputField = styled.textarea`
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Pretendard';
   font-weight: 500px;
   font-size: 15px;
@@ -143,9 +144,12 @@ export const InputField = styled.input`
   height: 70px;
   text-align: left;
   margin: 10px 0px 10px 50px;
-  padding: 10px;
+  padding: 20px;
   border: 1px solid #ffbf87;
   border-radius: 15px;
+
+  resize: none;
+  overflow: hidden;
 `;
 
 //등록버튼
@@ -160,5 +164,55 @@ export const AddButton = styled.button`
 
   &:hover {
     background: var(--button-hover-bg-color, #ffbf87);
+  }
+`;
+
+//저장부분
+export const Saved = styled.div`
+  display: flex;
+  margin-bottom: 30px;
+`;
+
+export const SavedMemo = styled.div`
+  display: flex;
+  align-items: center;
+  font-family: 'Pretendard';
+  font-weight: 500px;
+  font-size: 15px;
+  width: 940px;
+  height: auto;
+  text-align: left;
+  margin: 0px 0px 10px 50px;
+  padding: 10px 20px 10px 20px;
+  border: 1px solid #ffbf87;
+  border-radius: 15px;
+
+  overflow-y: auto;
+  word-wrap: 'break-word';
+`;
+
+export const SavedRating = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #ffbf87;
+  margin-left: 20px;
+  margin-right: 15px;
+`;
+
+export const SavedDate = styled.div`
+  font-size: 15px;
+  margin-top: 5px;
+`;
+
+export const EditButton = styled.div`
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  margin-left: 10px;
+
+  &:hover {
+    color: #ffbf87;
   }
 `;

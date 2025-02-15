@@ -1,10 +1,12 @@
 import * as S from './DetailPage.style';
-import { Link } from 'react-router-dom';
+import { LuPenLine } from 'react-icons/lu';
+import { FaRegTrashAlt, FaPen } from 'react-icons/fa';
+import { IoStar } from 'react-icons/io5';
+import StarNumber from '../../components/common/StarNumber';
 import { ModalMemo } from '../../components';
+import { ModalMemoDelete, ModalMemoEdit } from '../../components';
 import HeartButton from '../../components/common/Button/HeartButton/HeartButton';
 import { useState } from 'react';
-import { IoStar } from 'react-icons/io5';
-import { FaPen } from 'react-icons/fa';
 
 /*가상데이터*/
 const PlaceInfo = {
@@ -16,9 +18,16 @@ const PlaceInfo = {
   contact: '010-3927-6159',
   starRating: '4.3',
 };
+const SavedMemo = {
+  comment:
+    '커피가 맛있고,, 조용해서 작업하기 좋았다..다크 초콜릿향,,단 카라멜향.여러 견과향이 나며 오렌지와 귤의 화사한 산미와 단맛과 실키한 🍯 꿀같은 부드러움과 중후한 여운과 클린한 마무리감이 너무나도 좋은 프로토콜의 첫번째 블렌드 슈퍼노멀은 달달한 디저트와 너무 잘 어울리고 집중하고 싶을 때 선택해서 마시기 너무 너무 좋았습니다...🎼🌈☺🥰🙏🌳 만들어주신 멋진 선생님들께 ((감사드립니다))🌼🌿🌷🌳 정말 독서, 작업하기 좋은 카페입니다! 의자랑 테이블 넓직하고 커피 산미도 완전 제 취향이고 무화과고르곤졸라휘낭시에는 특이한 메뉴라 시켜봤는데 꼬릿한 치즈향과 무화과 조합이 아주 좋았습니다! 오래 집중하고 싶을 때 또 방문할 것 같아요!!☕️',
+  myStarRating: 4,
+  date: '2025. 01. 26',
+};
 
-const DetailPage = ({ onSave }) => {
+export const DetailPage = ({ onSave }) => {
   const { imageUrl, placeName, location, time, contact, starRating } = PlaceInfo;
+  const { comment, myStarRating, date } = SavedMemo;
   const [saved, setSaved] = useState(false);
 
   const handleSave = () => {
@@ -28,7 +37,10 @@ const DetailPage = ({ onSave }) => {
     }
   };
 
-  const [openModal, setOpenModal] = useState(false);
+  // 각 모달에 대한 개별 상태
+  const [openModalMemo, setOpenModalMemo] = useState(false);
+  const [openModalEdit, setOpenModalEdit] = useState(false);
+  const [openModalDelete, setOpenModalDelete] = useState(false);
 
   return (
     <div>
@@ -60,6 +72,7 @@ const DetailPage = ({ onSave }) => {
         <S.PlaceInfo>영업 시간 : &nbsp; {time}</S.PlaceInfo>
         <S.PlaceInfo>전화 번호 : &nbsp;{contact}</S.PlaceInfo>
       </S.PlaceContainer>
+
       {/* 메모 입력 영역 */}
       <S.MemoContainer>
         <S.MemoTitle>
@@ -74,15 +87,38 @@ const DetailPage = ({ onSave }) => {
           <S.AddButton
             type="button"
             onClick={() => {
-              setOpenModal(true);
+              setOpenModalMemo(true);
             }}>
             등록
           </S.AddButton>
-          {openModal ? <ModalMemo openModal={openModal} setOpenModal={setOpenModal} /> : null}
+          {openModalMemo && <ModalMemo openModal={openModalMemo} setOpenModal={setOpenModalMemo} />}
         </S.Memo>
+        <S.Saved>
+          <S.SavedMemo>{comment}</S.SavedMemo>
+          <S.SavedRating>
+            <StarNumber>{myStarRating}</StarNumber>
+            <S.SavedDate>{date}</S.SavedDate>
+          </S.SavedRating>
+          <S.EditButton
+            type="button"
+            onClick={() => {
+              setOpenModalEdit(true);
+            }}>
+            <LuPenLine size={20} />
+          </S.EditButton>
+          {openModalEdit && (
+            <ModalMemoEdit openModal={openModalEdit} setOpenModal={setOpenModalEdit} initialValue={comment} />
+          )}
+          <S.EditButton
+            type="button"
+            onClick={() => {
+              setOpenModalDelete(true);
+            }}>
+            <FaRegTrashAlt size={20} />
+          </S.EditButton>
+          {openModalDelete && <ModalMemoDelete openModal={openModalDelete} setOpenModal={setOpenModalDelete} />}
+        </S.Saved>
       </S.MemoContainer>
     </div>
   );
 };
-
-export default DetailPage;

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import HeartButton from '../common/Button/HeartButton/HeartButton';
 import * as S from './PlaceCard.style';
 
@@ -15,7 +16,7 @@ const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
   return (
     <S.PlaceCard>
       {/* 이미지 영역 */}
-      <S.ImageContainer>
+      <S.ImageContainer as={Link} to="/detail">
         {imageUrl ? (
           <S.PlaceImage src={imageUrl} alt={placeName} />
         ) : (
@@ -26,7 +27,9 @@ const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
       {/* 이미지 아래 영역 */}
       <S.TextFrame>
         <S.NameSave>
-          <S.PlaceName>{placeName}</S.PlaceName>
+          <S.PlaceName as={Link} to="/detail" style={{ textDecoration: 'none' }}>
+            {placeName}
+          </S.PlaceName>
           {/* HeartButton 컴포넌트 */}
           <S.HeartbuttonContainer>
             <HeartButton onClick={onSave} />
@@ -34,7 +37,9 @@ const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
         </S.NameSave>
       </S.TextFrame>
       {/* 장소 위치 */}
-      <S.PlaceLocation>{location}</S.PlaceLocation>
+      <S.PlaceLocation as={Link} to="/detail" style={{ textDecoration: 'none' }}>
+        {location}
+      </S.PlaceLocation>
     </S.PlaceCard>
   );
 };
