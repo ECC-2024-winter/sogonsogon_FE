@@ -13,6 +13,7 @@ function App() {
         <Route path="/savelist" element={<SaveListPage />} />
         <Route path="/results" element={<SearchResultsPage />} />
         <Route path="/detail" element={<DetailPage />} />
+        <Route path="/folder" element={<InFolderPage />} />
       </Routes>
     </Router>
   );

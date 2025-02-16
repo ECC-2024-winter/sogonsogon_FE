@@ -4,3 +4,4 @@ export { default as MainPage } from './MainPage/MainPage';
 export { default as SaveListPage } from './SaveListPage/SaveListPage';
 export { default as SearchResultsPage } from './SearchResultsPage/SearchResultsPage';
 export { DetailPage } from './DetailPage/DetailPage';
+export { default as InFolderPage } from './InFolderPage/InFolderPage';

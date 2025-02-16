@@ -1,3 +1,4 @@
 export * from './ButtonEdit';
 export * from './ButtonBasic';
-export * from './HeartButton/HeartButton';
+
+export { default as HeartButton } from './HeartButton/HeartButton';
