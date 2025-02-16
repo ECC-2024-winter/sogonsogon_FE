@@ -1,5 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { MainPage, LoginPage, SignupPage, SaveListPage, SearchResultsPage, DetailPage, InFolderPage } from './pages';
+import {
+  MainPage,
+  LoginPage,
+  SignupPage,
+  SaveListPage,
+  SearchResultsPage,
+  DetailPage,
+  InFolderPage,
+  Authentification,
+} from './pages';
 import { Header } from '../src/components';
 
 function App() {
@@ -8,6 +17,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/auth" element={<Authentification />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/savelist" element={<SaveListPage />} />
