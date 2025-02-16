@@ -12,13 +12,13 @@ function Header() {
         <nav>
           <S.NavLinks>
             <S.NavLinkItem>
-              <Link to="/savelist">
-                <S.StyledLink>저장 목록</S.StyledLink>
+              <Link to="/login">
+                <S.StyledLink>로그인</S.StyledLink>
               </Link>
             </S.NavLinkItem>
             <S.NavLinkItem>
-              <Link to="/memo">
-                <S.StyledLink>기록</S.StyledLink>
+              <Link to="/savelist">
+                <S.StyledLink>저장 목록</S.StyledLink>
               </Link>
             </S.NavLinkItem>
             <S.NavLinkItem>
