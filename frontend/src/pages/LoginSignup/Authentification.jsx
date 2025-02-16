@@ -10,7 +10,7 @@ const Authentification = () => {
     if (token === null) {
       navigate('/login', { replace: true }); //뒤로가기 안됨
     } else {
-      navigate('/signup', { replace: true });
+      navigate('/logout', { replace: true });
     }
   }, []);
 
