@@ -3,6 +3,8 @@ import * as S from './Header.style'; // Import your styled-components
 import { Link } from 'react-router-dom';
 
 function Header() {
+  const token = localStorage.getItem('token');
+
   return (
     <S.Header>
       <S.HeaderObj>
@@ -12,13 +14,13 @@ function Header() {
         <nav>
           <S.NavLinks>
             <S.NavLinkItem>
-              <Link to="/savelist">
-                <S.StyledLink>저장 목록</S.StyledLink>
+              <Link to="/auth">
+                <S.StyledLink>{token ? '로그아웃' : '로그인'}</S.StyledLink>
               </Link>
             </S.NavLinkItem>
             <S.NavLinkItem>
-              <Link to="/memo">
-                <S.StyledLink>기록</S.StyledLink>
+              <Link to="/savelist">
+                <S.StyledLink>저장 목록</S.StyledLink>
               </Link>
             </S.NavLinkItem>
             <S.NavLinkItem>

@@ -41,6 +41,7 @@ export const LoginsignupContainer = styled.div`
 
 export const LogoContainer = styled.div`
   display: flex;
+  flex-direction: column;
 `;
 
 export const LogoImage = styled.img`
