@@ -5,3 +5,5 @@ export { default as SaveListPage } from './SaveListPage/SaveListPage';
 export { default as SearchResultsPage } from './SearchResultsPage/SearchResultsPage';
 export { DetailPage } from './DetailPage/DetailPage';
 export { default as InFolderPage } from './InFolderPage/InFolderPage';
+export { AccountPage } from './AccountPage/AccountPage';
+export { AccountEditPage } from './AccountPage/AccountEditPage';

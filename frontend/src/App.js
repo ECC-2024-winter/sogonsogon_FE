@@ -1,5 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { MainPage, LoginPage, SignupPage, SaveListPage, SearchResultsPage, DetailPage, InFolderPage } from './pages';
+import {
+  MainPage,
+  LoginPage,
+  SignupPage,
+  SaveListPage,
+  SearchResultsPage,
+  DetailPage,
+  InFolderPage,
+  AccountPage,
+  AccountEditPage,
+} from './pages';
 import { Header } from '../src/components';
 
 function App() {
@@ -14,6 +24,8 @@ function App() {
         <Route path="/results" element={<SearchResultsPage />} />
         <Route path="/detail" element={<DetailPage />} />
         <Route path="/folder" element={<InFolderPage />} />
+        <Route path="/account" element={<AccountPage />} />
+        <Route path="/myinfo" element={<AccountEditPage />} />
       </Routes>
     </Router>
   );
