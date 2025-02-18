@@ -9,6 +9,7 @@ import {
   InFolderPage,
   AccountPage,
   AccountEditPage,
+  Authentification,
 } from './pages';
 import { Header } from '../src/components';
 
@@ -18,6 +19,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/auth" element={<Authentification />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/savelist" element={<SaveListPage />} />

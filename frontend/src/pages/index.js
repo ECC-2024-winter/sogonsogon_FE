@@ -7,3 +7,4 @@ export { DetailPage } from './DetailPage/DetailPage';
 export { default as InFolderPage } from './InFolderPage/InFolderPage';
 export { AccountPage } from './AccountPage/AccountPage';
 export { AccountEditPage } from './AccountPage/AccountEditPage';
+export { default as Authentification } from './LoginSignup/Authentification';
