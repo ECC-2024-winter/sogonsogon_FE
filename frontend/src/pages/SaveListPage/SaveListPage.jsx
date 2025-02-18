@@ -5,11 +5,7 @@ import * as S from './SaveListPage.style';
 
 /*가상 데이터*/
 const folders = [
-  {
-    id: 1,
-    imageUrl: [],
-    folderName: '혼밥 맛집',
-  },
+  { id: 1, imageUrl: [], folderName: '혼밥 맛집' },
   {
     id: 2,
     imageUrl: [
@@ -20,26 +16,10 @@ const folders = [
     ],
     folderName: '북카페/ 작업하기 좋은 카페',
   },
-  {
-    id: 3,
-    imageUrl: [],
-    folderName: '2025년 1월 전시회',
-  },
-  {
-    id: 4,
-    imageUrl: [],
-    folderName: '망원동 소품샵',
-  },
-  {
-    id: 5,
-    imageUrl: [],
-    folderName: null,
-  },
-  {
-    id: 6,
-    imageUrl: [],
-    folderName: null,
-  },
+  { id: 3, imageUrl: [], folderName: '2025년 1월 전시회' },
+  { id: 4, imageUrl: [], folderName: '망원동 소품샵' },
+  { id: 5, imageUrl: [], folderName: null },
+  { id: 6, imageUrl: [], folderName: null },
 ];
 
 function SaveListPage() {
@@ -47,27 +27,28 @@ function SaveListPage() {
 
   return (
     <div>
-      <Link to="/folder" style={{ textDecoration: 'none', color: 'inherit' }}>
-        <S.SaveTitleWrapper>
-          <S.SaveTitle>저장 목록</S.SaveTitle>
-          <ButtonEdit
-            type="button"
-            onClick={() => {
-              setOpenModal(true);
-            }}>
-            편집하기
-          </ButtonEdit>
-          {openModal ? <ModalEdit openModal={openModal} setOpenModal={setOpenModal} /> : null}
-        </S.SaveTitleWrapper>
-        <S.SaveFolders>
-          <S.SaveFolderContainer>
-            {/* TODO: 디스트럭처링 필요 */}
-            {folders.map(({ id, imageUrl, folderName }) => (
-              <SaveFolder key={id} imageUrls={imageUrl} folderName={folderName} />
+      <S.SaveTitleWrapper>
+        <S.SaveTitle>저장 목록</S.SaveTitle>
+        <ButtonEdit type="button" onClick={() => setOpenModal(true)}>
+          편집하기
+        </ButtonEdit>
+        {openModal && <ModalEdit openModal={openModal} setOpenModal={setOpenModal} />}
+      </S.SaveTitleWrapper>
+
+      <S.SaveFolders>
+        <S.SaveFolderContainer>
+          {folders
+            .filter(folder => folder.folderName)
+            .map(({ id, imageUrl, folderName }) => (
+              <Link
+                key={id}
+                to={`/folder/${encodeURIComponent(folderName)}`}
+                style={{ textDecoration: 'none', color: 'inherit' }}>
+                <SaveFolder imageUrls={imageUrl} folderName={folderName} />
+              </Link>
             ))}
-          </S.SaveFolderContainer>
-        </S.SaveFolders>
-      </Link>
+        </S.SaveFolderContainer>
+      </S.SaveFolders>
     </div>
   );
 }

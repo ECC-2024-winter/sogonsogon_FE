@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { StarNumber } from '..';
 
-/*가상데이터*/
-
 export const MemoCard = ({ placeName, location, comment, myStarRating, date }) => {
   return (
     <Container>

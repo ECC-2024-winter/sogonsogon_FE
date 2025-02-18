@@ -70,16 +70,21 @@ export function AccountPage() {
           </S.TabUnselected>
         </Link>
       </S.TabContainer>
+
       <S.MemoCardContainer>
         {places.map(({ id, placeName, location, comment, myStarRating, date }) => (
-          <MemoCard
+          <Link
             key={id}
-            placeName={placeName}
-            location={location}
-            comment={comment}
-            myStarRating={myStarRating}
-            date={date}
-          />
+            to={`/detail/${encodeURIComponent(placeName)}`}
+            style={{ textDecoration: 'none', color: 'inherit' }}>
+            <MemoCard
+              placeName={placeName}
+              location={location}
+              comment={comment}
+              myStarRating={myStarRating}
+              date={date}
+            />
+          </Link>
         ))}
       </S.MemoCardContainer>
     </div>

@@ -16,7 +16,7 @@ const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
   return (
     <S.PlaceCard>
       {/* 이미지 영역 */}
-      <S.ImageContainer as={Link} to="/detail">
+      <S.ImageContainer as={Link} to={`/detail/${encodeURIComponent(placeName)}`}>
         {imageUrl ? (
           <S.PlaceImage src={imageUrl} alt={placeName} />
         ) : (
@@ -27,7 +27,7 @@ const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
       {/* 이미지 아래 영역 */}
       <S.TextFrame>
         <S.NameSave>
-          <S.PlaceName as={Link} to="/detail" style={{ textDecoration: 'none' }}>
+          <S.PlaceName as={Link} to={`/detail/${encodeURIComponent(placeName)}`} style={{ textDecoration: 'none' }}>
             {placeName}
           </S.PlaceName>
           {/* HeartButton 컴포넌트 */}
