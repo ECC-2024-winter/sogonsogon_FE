@@ -24,6 +24,19 @@ export function AccountEditPage() {
           회원정보 수정
         </S.TabSelected>
       </S.TabContainer>
+      <S.AccountContainer>
+        <S.AccountBox>
+          <S.Text>닉네임</S.Text>
+          <S.Nickname />
+          <S.Text>이메일 주소</S.Text>
+          <S.Email></S.Email>
+          <S.Password>
+            <S.Text>비밀번호</S.Text>
+            <S.ButtonPW>수정</S.ButtonPW>
+          </S.Password>
+          <S.ButtonINFO>회원 정보 수정</S.ButtonINFO>
+        </S.AccountBox>
+      </S.AccountContainer>
     </div>
   );
 }
