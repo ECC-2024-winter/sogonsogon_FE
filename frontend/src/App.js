@@ -23,7 +23,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/savelist" element={<SaveListPage />} />
-        <Route path="/results" element={<SearchResultsPage />} />
+        <Route path="/results/:search" element={<SearchResultsPage />} />
         <Route path="/detail/:placeName" element={<DetailPage />} />
         <Route path="/folder/:folderName" element={<InFolderPage />} />
         <Route path="/account" element={<AccountPage />} />

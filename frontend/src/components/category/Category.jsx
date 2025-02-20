@@ -23,13 +23,11 @@ const Category = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = hashtag => {
-    // TODO: 왜 encodeURI 했는지 공부
     navigate(`/results?query=${encodeURIComponent(hashtag)}`);
   };
 
   return (
     <S.CategoryContainer>
-      {/* TODO: 디스트럭쳐링 해보기 */}
       {categories.map(({ id, hashtag, icon, name }) => (
         <S.CategoryItem key={id} onClick={() => handleCategoryClick(hashtag)}>
           <S.CategoryIcon>{icon}</S.CategoryIcon>
