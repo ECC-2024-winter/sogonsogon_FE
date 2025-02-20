@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { LogInContainer, InputField, ButtonLogin } from '../../components';
 import * as S from './LoginSignup.style';
 import axios from 'axios';
-import { apiUrl } from '../../Api';
+import { COMMON_API_URL } from '../../consts';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -28,7 +28,7 @@ const LoginPage = () => {
     }
 
     try {
-      const response = await axios.post(`${apiUrl}/user/signin`, { email, pw });
+      const response = await axios.post(`${COMMON_API_URL}/user/signin`, { params: { email, pw } });
 
       localStorage.setItem('jwtAccessToken', response.data.jwtAccessToken);
       localStorage.setItem('userInfo', JSON.stringify(response.data.userInfo));

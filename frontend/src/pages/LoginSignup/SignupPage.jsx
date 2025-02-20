@@ -3,7 +3,7 @@ import { LogInContainer, InputField, ButtonLogin } from '../../components';
 import * as S from './LoginSignup.style';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { apiUrl } from '../../Api';
+import { COMMON_API_URL } from '../../consts';
 
 const SignupPage = () => {
   const [nickname, setNickname] = useState('');
@@ -37,7 +37,7 @@ const SignupPage = () => {
     }
 
     try {
-      const response = await axios.post(`${apiUrl}/user/signup`, { nickname, email, pw });
+      const response = await axios.post(`${COMMON_API_URL}/user/signup`, { nickname, email, pw });
       setSuccess(response.data.success);
       setTimeout(() => navigate('/login'), 1000); //성공 시 로그인 페이지로 이동
     } catch (error) {

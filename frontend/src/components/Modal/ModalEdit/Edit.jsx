@@ -37,7 +37,7 @@ function Edit() {
   const onCreate = async () => {
     if (!folderName.trim()) return;
     try {
-      const response = await axios.post(`${API_URL}/folders`, { folderName });
+      const response = await axios.post(`${API_URL}/folders`, { params: { folderName } });
       setFolders(prevFolders => [...prevFolders, response.data]);
       setFolderName('');
     } catch (error) {

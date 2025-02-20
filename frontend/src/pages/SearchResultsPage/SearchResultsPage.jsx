@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate'; //페이지네이션 UI
 import * as S from './SearchResults.style';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { PlaceCard, SearchBar, Category } from '../../components';
+import { PlaceCard } from '../../components';
 import axios from 'axios';
-import { apiUrl } from '../../Api';
+import { COMMON_API_URL } from '../../consts';
 import { useParams } from 'react-router-dom';
-
+import { SearchContainer } from '../MainPage/SearchContainer';
 const SearchResultsPage = () => {
   // 페이지네이션
   const placesPerPage = 8;
@@ -20,10 +20,12 @@ const SearchResultsPage = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [error, setError] = useState('');
 
+  console.log('search', search);
+
   useEffect(() => {
     const fetchResults = async () => {
       try {
-        const response = await axios.get(`${apiUrl}/place/${encodeURIComponent(search)}`);
+        const response = await axios.get(`${COMMON_API_URL}/place/${encodeURIComponent(search)}`);
         setSearchResults(response.data.data);
       } catch (err) {
         if (err.response) {
@@ -51,34 +53,34 @@ const SearchResultsPage = () => {
   };
 
   return (
-    <div>
-      <SearchBar />
-      <Category />
-      {error && <p>{error}</p>}
-      <S.PlaceCardContainer>
-        {currentPlaces.map(({ postId, imageUrl, place, address }) => (
-          <PlaceCard key={postId} imageUrl={imageUrl} placeName={place} location={address} />
-        ))}
-      </S.PlaceCardContainer>
-      <S.PaginationContainer>
-        <ReactPaginate
-          previousLabel={<FiChevronLeft />}
-          nextLabel={<FiChevronRight />}
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={3}
-          marginPagesDisplayed={2}
-          pageCount={pageCount}
-          pageClassName="page-places"
-          pageLinkClassName="page-link"
-          breakLabel="..."
-          breakClassName="page-places"
-          breakLinkClassName="page-link"
-          containerClassName="pagination"
-          activeClassName="active"
-          renderOnZeroPageCount={null}
-        />
-      </S.PaginationContainer>
-    </div>
+    <SearchContainer>
+      <div>
+        {error && <p>{error}</p>}
+        <S.PlaceCardContainer>
+          {currentPlaces.map(({ postId, imageUrl, place, address }) => (
+            <PlaceCard key={postId} imageUrl={imageUrl} placeName={place} location={address} />
+          ))}
+        </S.PlaceCardContainer>
+        <S.PaginationContainer>
+          <ReactPaginate
+            previousLabel={<FiChevronLeft />}
+            nextLabel={<FiChevronRight />}
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={3}
+            marginPagesDisplayed={2}
+            pageCount={pageCount}
+            pageClassName="page-places"
+            pageLinkClassName="page-link"
+            breakLabel="..."
+            breakClassName="page-places"
+            breakLinkClassName="page-link"
+            containerClassName="pagination"
+            activeClassName="active"
+            renderOnZeroPageCount={null}
+          />
+        </S.PaginationContainer>
+      </div>
+    </SearchContainer>
   );
 };
 

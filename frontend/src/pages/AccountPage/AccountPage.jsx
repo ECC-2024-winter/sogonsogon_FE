@@ -56,19 +56,19 @@ export function AccountPage() {
   const [places, setPlaces] = useState([]);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchPlaces = async () => {
-      try {
-        const response = await axios.get(
-          'http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/mypage/comment',
-        );
-        setPlaces(response.data);
-      } catch (error) {
-        console.error('에러 발생', error);
-        setError(error);
-      }
-    };
+  const fetchPlaces = async () => {
+    try {
+      const response = await axios.get(
+        'http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/mypage/comment',
+      );
+      setPlaces(response.data);
+    } catch (error) {
+      console.error('에러 발생', error);
+      setError(error);
+    }
+  };
 
+  useEffect(() => {
     fetchPlaces();
   }, []);
 

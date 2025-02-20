@@ -1,7 +1,7 @@
 import * as S from './ModalLogout.style';
 import ButtonModal from '../../common/Button/ButtonModal';
 import axios from 'axios';
-import { apiUrl } from '../../../Api';
+import { API_URLS } from '../../../consts';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -17,7 +17,7 @@ export const ModalLogout = ({ openModal, setOpenModal }) => {
     const jwtAccessToken = localStorage.getItem('jwtAccessToken');
 
     try {
-      await axios.get(`${apiUrl}/user/signout`, {
+      await axios.get(API_URLS.signout, {
         headers: {
           Authorization: `Bearer ${jwtAccessToken}`,
         },
@@ -38,6 +38,7 @@ export const ModalLogout = ({ openModal, setOpenModal }) => {
       }
     }
   };
+
   return (
     <S.Overlay>
       <S.Container>

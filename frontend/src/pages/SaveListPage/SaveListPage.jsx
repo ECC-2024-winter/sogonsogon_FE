@@ -28,19 +28,19 @@ function SaveListPage() {
   const [folders, setFolders] = useState([]);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchFolders = async () => {
-      try {
-        const response = await axios.get(
-          'http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/folders',
-        );
-        setFolders(response.data);
-      } catch (error) {
-        console.error('데이터 가져오기 에러', error);
-        setError(error);
-      }
-    };
+  const fetchFolders = async () => {
+    try {
+      const response = await axios.get(
+        'http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/folders',
+      );
+      setFolders(response.data);
+    } catch (error) {
+      console.error('데이터 가져오기 에러', error);
+      setError(error);
+    }
+  };
 
+  useEffect(() => {
     fetchFolders();
   }, []);
 

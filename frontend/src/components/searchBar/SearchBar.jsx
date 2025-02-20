@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import * as S from './SearchBar.style';
 
 const SearchBar = () => {
-  const [query, setQuery] = useState('');
+  const { search } = useParams();
+  const [query, setQuery] = useState(search || '');
   const navigate = useNavigate();
 
   const handleSearch = e => {
