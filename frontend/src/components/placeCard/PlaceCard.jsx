@@ -37,7 +37,7 @@ const PlaceCard = ({ imageUrl, placeName, location, onSave }) => {
         </S.NameSave>
       </S.TextFrame>
       {/* 장소 위치 */}
-      <S.PlaceLocation as={Link} to="/detail" style={{ textDecoration: 'none' }}>
+      <S.PlaceLocation as={Link} to={`/detail/${encodeURIComponent(placeName)}`} style={{ textDecoration: 'none' }}>
         {location}
       </S.PlaceLocation>
     </S.PlaceCard>
