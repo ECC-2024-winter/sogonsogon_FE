@@ -3,17 +3,18 @@ import { LuPenLine } from 'react-icons/lu';
 import { FaRegTrashAlt, FaPen } from 'react-icons/fa';
 import { IoStar } from 'react-icons/io5';
 import { ModalMemo, ModalMemoDelete, ModalMemoEdit, StarNumber, HeartButton } from '../../components';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 
-/*가상데이터*/
+/*가상데이터
 const PlaceInfo = [
   {
     imageUrl:
       'https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20211117_235%2F1637111766001h166z_JPEG%2F04531D1F-5E55-40C2-B669-919206DBFB60.jpeg',
     placeName: '프로토콜 연희점',
-    location: '서울 서대문구 연희로 109 2층 (우)03708',
-    time: '매일 10:30 ~ 22:00',
+    address: '서울 서대문구 연희로 109 2층 (우)03708',
+    openTime: '매일 10:30 ~ 22:00',
     contact: '010-3927-6159',
     starRating: '4.3',
     comment:
@@ -25,14 +26,24 @@ const PlaceInfo = [
     imageUrl:
       'https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240618_22%2F17186870982432nacB_JPEG%2FIMG_4279.jpg',
     placeName: '텅',
-    location: '서울 종로구 율곡로 82 701호',
+    address: '서울 종로구 율곡로 82 701호',
     time: '매일 9:00 ~ 23:00',
     contact: '02-766-1933',
     starRating: '4.7',
   },
-];
+];*/
 
 export const DetailPage = ({ onSave }) => {
+  const { placeName } = useParams();
+  const [placeData, setPlaceData] = useState(null);
+  const [error, setError] = useState(null);
+
+  //입력 데이터 상태 관리
+  const [comment, setComment] = useState('');
+  const [myStarRating, setMyStarRating] = useState(null);
+  const [date, setDate] = useState('');
+
+  //하트버튼 상태
   const [saved, setSaved] = useState(false);
   const handleSave = () => {
     setSaved(!saved);
@@ -41,25 +52,48 @@ export const DetailPage = ({ onSave }) => {
     }
   };
 
-  // 각 모달에 대한 개별 상태
+  // 각 모달 상태
   const [openModalMemo, setOpenModalMemo] = useState(false);
   const [openModalEdit, setOpenModalEdit] = useState(false);
   const [openModalDelete, setOpenModalDelete] = useState(false);
-  const { placeName } = useParams();
-  const placeData = PlaceInfo.find(place => place.placeName === decodeURIComponent(placeName));
 
+  useEffect(() => {
+    const fetchPlaceData = async () => {
+      try {
+        const response = await axios.get(
+          `http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/place/detail/${encodeURIComponent(placeName)}`,
+        );
+        setPlaceData(response.data);
+      } catch (error) {
+        console.error('에러 발생', error);
+        setError(error);
+      }
+    };
+
+    fetchPlaceData();
+  }, [placeName]);
+
+  if (error) return <div>데이터를 불러오는 중 오류가 발생했습니다.</div>;
   if (!placeData) {
     return <div>해당 장소를 찾을 수 없습니다.</div>;
   }
 
-  const { imageUrl, location, time, contact, starRating, comment, myStarRating, date } = placeData;
+  const handleCommentChange = e => {
+    setComment(e.target.value);
+  };
+
+  const handleSaveMemo = (selectedRating, selectedDate) => {
+    setMyStarRating(selectedRating);
+    setDate(selectedDate);
+    setOpenModalMemo(false);
+  };
 
   return (
     <div>
       <S.PlaceContainer>
         {/* 이미지 영역 */}
         <S.PlaceImg>
-          {imageUrl ? <S.PlaceImage src={imageUrl} alt={placeName} /> : <S.NoImg>No Image</S.NoImg>}
+          {placeData.imageUrl ? <S.PlaceImage src={placeData.imageUrl} alt={placeName} /> : <S.NoImg>No Image</S.NoImg>}
         </S.PlaceImg>
 
         {/* 정보 텍스트 */}
@@ -76,13 +110,13 @@ export const DetailPage = ({ onSave }) => {
           <S.Star>
             <IoStar />
           </S.Star>
-          후기 {starRating}
+          후기 {placeData.starRating}
         </S.Rating>
 
         {/* 장소 위치 및 정보 */}
-        <S.PlaceInfo>주소 : &nbsp; {location}</S.PlaceInfo>
-        <S.PlaceInfo>영업 시간 : &nbsp; {time}</S.PlaceInfo>
-        <S.PlaceInfo>전화 번호 : &nbsp;{contact}</S.PlaceInfo>
+        <S.PlaceInfo>주소 : &nbsp; {placeData.address}</S.PlaceInfo>
+        <S.PlaceInfo>영업 시간 : &nbsp; {placeData.openTime}</S.PlaceInfo>
+        <S.PlaceInfo>전화 번호 : &nbsp;{placeData.contact}</S.PlaceInfo>
       </S.PlaceContainer>
 
       {/* 메모 입력 영역 */}
@@ -95,7 +129,12 @@ export const DetailPage = ({ onSave }) => {
           <S.Text>쉬었다 간 흔적을 남겨주세요</S.Text>
         </S.MemoTitle>
         <S.Memo>
-          <S.InputField type="text" placeholder="오늘의 이 장소는 어땠나요?" />
+          <S.InputField
+            type="text"
+            placeholder="오늘의 이 장소는 어땠나요?"
+            value={comment}
+            onChange={handleCommentChange}
+          />
           <S.AddButton
             type="button"
             onClick={() => {
@@ -103,33 +142,38 @@ export const DetailPage = ({ onSave }) => {
             }}>
             등록
           </S.AddButton>
-          {openModalMemo && <ModalMemo openModal={openModalMemo} setOpenModal={setOpenModalMemo} />}
-        </S.Memo>
-        <S.Saved>
-          <S.SavedMemo>{comment}</S.SavedMemo>
-          <S.SavedRating>
-            <StarNumber>{myStarRating}</StarNumber>
-            <S.SavedDate>{date}</S.SavedDate>
-          </S.SavedRating>
-          <S.EditButton
-            type="button"
-            onClick={() => {
-              setOpenModalEdit(true);
-            }}>
-            <LuPenLine size={20} />
-          </S.EditButton>
-          {openModalEdit && (
-            <ModalMemoEdit openModal={openModalEdit} setOpenModal={setOpenModalEdit} initialValue={comment} />
+          {openModalMemo && (
+            <ModalMemo openModal={openModalMemo} setOpenModal={setOpenModalMemo} onSaveMemo={handleSaveMemo} />
           )}
-          <S.EditButton
-            type="button"
-            onClick={() => {
-              setOpenModalDelete(true);
-            }}>
-            <FaRegTrashAlt size={20} />
-          </S.EditButton>
-          {openModalDelete && <ModalMemoDelete openModal={openModalDelete} setOpenModal={setOpenModalDelete} />}
-        </S.Saved>
+        </S.Memo>
+
+        {comment && (
+          <S.Saved>
+            <S.SavedMemo>{comment}</S.SavedMemo>
+            <S.SavedRating>
+              <StarNumber>{myStarRating}</StarNumber>
+              <S.SavedDate>{date}</S.SavedDate>
+            </S.SavedRating>
+            <S.EditButton
+              type="button"
+              onClick={() => {
+                setOpenModalEdit(true);
+              }}>
+              <LuPenLine size={20} />
+            </S.EditButton>
+            {openModalEdit && (
+              <ModalMemoEdit openModal={openModalEdit} setOpenModal={setOpenModalEdit} initialValue={comment} />
+            )}
+            <S.EditButton
+              type="button"
+              onClick={() => {
+                setOpenModalDelete(true);
+              }}>
+              <FaRegTrashAlt size={20} />
+            </S.EditButton>
+            {openModalDelete && <ModalMemoDelete openModal={openModalDelete} setOpenModal={setOpenModalDelete} />}
+          </S.Saved>
+        )}
       </S.MemoContainer>
     </div>
   );
