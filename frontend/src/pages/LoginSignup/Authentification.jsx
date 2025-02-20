@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ModalLogout } from '../../components/Modal/ModalLogout/ModalLogout';
 
 const Authentification = () => {
   const navigate = useNavigate();
@@ -10,7 +11,7 @@ const Authentification = () => {
     if (token === null) {
       navigate('/login', { replace: true }); //뒤로가기 안됨
     } else {
-      navigate('/logout', { replace: true });
+      <ModalLogout />;
     }
   }, []);
 

@@ -42,9 +42,12 @@ export const LoginsignupContainer = styled.div`
 export const LogoContainer = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
 `;
 
 export const LogoImage = styled.img`
+  width: 65px;
+  height: 65px;
   margin-left: 0;
 `;
 
@@ -102,4 +105,12 @@ export const CheckButton = styled.label`
     font-size: 12px;
     color: white;
   }
+`;
+
+export const ErrorMessage = styled.label`
+  color: red;
+`;
+
+export const SuccessMessage = styled.label`
+  color: #ffbf87;
 `;
