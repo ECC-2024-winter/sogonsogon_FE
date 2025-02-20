@@ -1,45 +1,35 @@
+import { useState, useEffect } from 'react';
 import { SearchBar, PlaceCard, Category } from '../../components';
 import * as S from './Main.style';
+import { apiUrl } from '../../Api';
+import axios from 'axios';
 
-// 임시 데이터
-const recommendations = [
-  {
-    title: '🔥 이번 주 가장 많이 뜨고 있는 Top 3',
-    places: [
-      {
-        id: 1,
-        imageUrl: 'https://blog.kakaocdn.net/dn/dizeYM/btrN5vZONwk/0ShfJor6t6KANhKzI3Qr1k/img.jpg',
-        placeName: '텅',
-        location: '서울 종로구 북촌로 701호',
-      },
-      {
-        id: 2,
-        imageUrl: '',
-        placeName: '프로토콜 연희점',
-        location: '서울 서대문구 연희로 10길 2층',
-      },
-      { id: 3, imageUrl: '', placeName: '장소', location: '위치' },
-    ],
-  },
-  {
-    title: '👍 이 달의 맛집 Best 3',
-    places: [
-      { id: 4, imageUrl: '', placeName: '장소', location: '위치' },
-      { id: 5, imageUrl: '', placeName: '장소', location: '위치' },
-      { id: 6, imageUrl: '', placeName: '장소', location: '위치' },
-    ],
-  },
-  {
-    title: '😎 이런 장소는 어때요?',
-    places: [
-      { id: 7, imageUrl: '', placeName: '장소', location: '위치' },
-      { id: 8, imageUrl: '', placeName: '장소', location: '위치' },
-      { id: 9, imageUrl: '', placeName: '장소', location: '위치' },
-    ],
-  },
-];
+function useData(url) {
+  const [data, setData] = useState([]);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    if (url) {
+      axios
+        .get(url)
+        .then(response => {
+          if (response.data.placeInfo) {
+            setData(response.data.placeInfo);
+          }
+        })
+        .catch(err => {
+          setError(err.response?.data?.error);
+        });
+    }
+  }, [url]);
+  return { data, error };
+}
 
 function MainPage() {
+  const { data: topTrending, error: top3Error } = useData(`${apiUrl}/main/top3`);
+  const { data: bestRestaurants, error: best3Error } = useData(`${apiUrl}/main/best3`);
+  const { data: recommendedShows, show3Error } = useData(`${apiUrl}/main/show`);
+
   const handleSave = () => {
     alert('장소가 저장되었습니다!');
   };
@@ -48,22 +38,25 @@ function MainPage() {
     <S.MainContainer>
       <SearchBar />
       <Category />
+      {top3Error && <p>{top3Error}</p>}
+      {best3Error && <p>{best3Error}</p>}
+      {show3Error && <p>{show3Error}</p>}
       <S.RecommendationContainer>
-        {/* TODO: 디스트럭쳐링 해봅시다 */}
-        {recommendations.map(({ title, places }) => (
-          // TODO: key 왜 index 썼나요? => https://ko.react.dev/learn/rendering-lists#rules-of-keys
+        {[
+          { title: '🔥 이번 주 가장 많이 뜨고 있는 Top 3', placeInfo: topTrending },
+          { title: '👍 이 달의 맛집 Best 3', placeInfo: bestRestaurants },
+          { title: '😎 이런 장소는 어때요?', placeInfo: recommendedShows },
+        ].map(({ title, placeInfo }) => (
           <S.RecommendationSection key={title}>
-            {/* Title */}
             <S.RecommendationTitle>{title}</S.RecommendationTitle>
-            {/* PlaceCard 가로 정렬 */}
             <S.PlaceCardContainer>
-              {places.map(({ id, imageUrl, placeName, location }) => (
+              {placeInfo.map(({ postId, imageUrl, place, address }) => (
                 <PlaceCard
-                  key={id}
+                  key={postId}
                   // NOTE: API 연동 전 임시 랜덤 이미지 적용
-                  imageUrl={imageUrl || `https://picsum.photos/600/400?random=${id}`}
-                  placeName={placeName}
-                  location={location}
+                  imageUrl={imageUrl || `https://picsum.photos/600/400?random=${postId}`}
+                  placeName={place}
+                  location={address}
                   onSave={handleSave}
                 />
               ))}
