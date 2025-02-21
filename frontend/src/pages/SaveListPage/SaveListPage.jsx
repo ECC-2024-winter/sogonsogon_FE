@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { SaveFolder, ButtonEdit, ModalEdit } from '../../components';
 import * as S from './SaveListPage.style';
+import { COMMON_API_URL } from '../../consts';
 
 /*가상 데이터
 const folders = [
@@ -30,9 +31,7 @@ function SaveListPage() {
 
   const fetchFolders = async () => {
     try {
-      const response = await axios.get(
-        'http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/folders',
-      );
+      const response = await axios.get(`${COMMON_API_URL}/folders`);
       setFolders(response.data);
     } catch (error) {
       console.error('데이터 가져오기 에러', error);

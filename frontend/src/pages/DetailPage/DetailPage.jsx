@@ -6,6 +6,7 @@ import { ModalMemo, ModalMemoDelete, ModalMemoEdit, StarNumber, HeartButton } fr
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { COMMON_API_URL } from '../../../consts';
 
 /*가상데이터
 const PlaceInfo = [
@@ -60,9 +61,7 @@ export const DetailPage = ({ onSave }) => {
   useEffect(() => {
     const fetchPlaceData = async () => {
       try {
-        const response = await axios.get(
-          `http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/place/detail/${encodeURIComponent(placeName)}`,
-        );
+        const response = await axios.get(`${COMMON_API_URL}/place/detail/${encodeURIComponent(placeName)}`);
         setPlaceData(response.data);
       } catch (error) {
         console.error('에러 발생', error);
