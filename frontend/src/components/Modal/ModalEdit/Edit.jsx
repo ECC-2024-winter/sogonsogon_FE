@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CreateFolder from './CreateFolder';
 import FolderList from './FolderList';
-import { API_URLS, COMMON_API_URL } from '../../consts';
+import { API_URLS, COMMON_API_URL } from '../../../consts';
 
 /* 가상 데이터 
   const [folders, setFolders] = useState([

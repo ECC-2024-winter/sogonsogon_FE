@@ -6,7 +6,8 @@ import { ModalMemo, ModalMemoDelete, ModalMemoEdit, StarNumber, HeartButton } fr
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { COMMON_API_URL } from '../../../consts';
+import { COMMON_API_URL } from '../../consts';
+import { Error } from '../../components/common';
 
 /*가상데이터
 const PlaceInfo = [
@@ -72,7 +73,7 @@ export const DetailPage = ({ onSave }) => {
     fetchPlaceData();
   }, [placeName]);
 
-  if (error) return <div>데이터를 불러오는 중 오류가 발생했습니다.</div>;
+  if (error) return <Error>데이터를 불러오는 중 오류가 발생했습니다.</Error>;
   if (!placeData) {
     return <div>해당 장소를 찾을 수 없습니다.</div>;
   }

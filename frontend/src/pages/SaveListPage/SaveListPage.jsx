@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { SaveFolder, ButtonEdit, ModalEdit } from '../../components';
 import * as S from './SaveListPage.style';
 import { COMMON_API_URL } from '../../consts';
+import { Error } from '../../components/common';
 
 /*가상 데이터
 const folders = [
@@ -43,7 +44,7 @@ function SaveListPage() {
     fetchFolders();
   }, []);
 
-  if (error) return <div>데이터를 불러오는 중 오류가 발생했습니다.</div>;
+  if (error) return <Error>데이터를 불러오는 중 오류가 발생했습니다.</Error>;
 
   return (
     <div>
