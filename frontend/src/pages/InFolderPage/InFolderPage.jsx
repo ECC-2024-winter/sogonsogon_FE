@@ -4,6 +4,7 @@ import { IoArrowBackSharp } from 'react-icons/io5';
 import * as S from './InFolderPage.style';
 import { PlaceCard } from '../../components';
 import { useParams } from 'react-router-dom';
+import { COMMON_API_URL } from '../../consts';
 
 /*가상 데이터
 const folders = [
@@ -60,9 +61,7 @@ function InFolderPage() {
   useEffect(() => {
     const fetchPlaces = async () => {
       try {
-        const response = await axios.get(
-          `http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/folders/${encodeURIComponent(folderName)}`,
-        );
+        const response = await axios.get(`${COMMON_API_URL}/folders/${encodeURIComponent(folderName)}`);
         setPlaces(response.data);
       } catch (error) {
         console.error('에러 발생', error);

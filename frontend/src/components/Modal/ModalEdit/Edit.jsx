@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import CreateFolder from './CreateFolder';
 import FolderList from './FolderList';
+import { API_URLS, COMMON_API_URL } from '../../../consts';
 
 /* 가상 데이터 
   const [folders, setFolders] = useState([
@@ -12,8 +13,6 @@ import FolderList from './FolderList';
     { id: '5', folderName: '디저트 맛집' },
   ]);*/
 
-const API_URL = 'http://sogonsogon-env.eba-kczhd36e.ap-northeast-2.elasticbeanstalk.com/';
-
 function Edit() {
   const [folders, setFolders] = useState([]);
   const [folderName, setFolderName] = useState('');
@@ -21,7 +20,7 @@ function Edit() {
   useEffect(() => {
     const fetchFolders = async () => {
       try {
-        const response = await axios.get(`${API_URL}/folders`);
+        const response = await axios.get(API_URLS.folders);
         setFolders(response.data);
       } catch (error) {
         console.error('폴더 불러오기 에러', error);
@@ -37,7 +36,7 @@ function Edit() {
   const onCreate = async () => {
     if (!folderName.trim()) return;
     try {
-      const response = await axios.post(`${API_URL}/folders`, { params: { folderName } });
+      const response = await axios.post(API_URLS.folders, { params: { folderName } });
       setFolders(prevFolders => [...prevFolders, response.data]);
       setFolderName('');
     } catch (error) {
@@ -53,7 +52,7 @@ function Edit() {
 
   const onRemove = async folderId => {
     try {
-      await axios.delete(`${API_URL}/folders/${folderId}`);
+      await axios.delete(`${COMMON_API_URL}/folders/${folderId}`);
       setFolders(prevFolders => prevFolders.filter(item => item.folderId !== folderId));
     } catch (error) {
       console.error('폴더 삭제 에러', error);
