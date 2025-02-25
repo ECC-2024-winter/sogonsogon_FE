@@ -11,16 +11,19 @@ import {
   AccountEditPage,
   Authentification,
 } from './pages';
+import { useState } from 'react';
 import { Header } from '../src/components';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
+
   return (
     <Router>
-      <Header />
+      <Header isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/auth" element={<Authentification />} />
-        <Route path="/login" element={<LoginPage />} />
+        {/* <Route path="/auth" element={<Authentification />} /> */}
+        <Route path="/login" element={<LoginPage setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/savelist" element={<SaveListPage />} />
         <Route path="/results/:search" element={<SearchResultsPage />} />

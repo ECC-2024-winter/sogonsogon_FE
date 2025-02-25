@@ -4,6 +4,7 @@ import * as S from './LoginSignup.style';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { COMMON_API_URL } from '../../consts';
+import { ModalSignup } from '../../components/Modal/ModalSignup/ModalSignup';
 
 const SignupPage = () => {
   const [nickname, setNickname] = useState('');
@@ -12,6 +13,7 @@ const SignupPage = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const [agree, setAgree] = useState(false);
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
   const navigate = useNavigate();
 
   const isValidNickname = nickname => /^[ㄱ-ㅎ가-힣a-zA-Z]+$/.test(nickname);
@@ -35,24 +37,25 @@ const SignupPage = () => {
       setError('비밀번호는 영문, 숫자 포함 8자 이상이어야 합니다.');
       return;
     }
+    setIsSignupModalOpen(true);
 
-    try {
-      const response = await axios.post(`${COMMON_API_URL}/user/signup`, { nickname, email, pw });
-      setSuccess(response.data.success);
-      setTimeout(() => navigate('/login'), 1000); //성공 시 로그인 페이지로 이동
-    } catch (error) {
-      if (error.response) {
-        if (error.response.status === 400) {
-          setError('올바르지 않은 데이터입니다.');
-        } else if (error.response.status === 409) {
-          setError('이미 사용 중인 아이디입니다.');
-        } else if (error.response.status === 500) {
-          setError('Server Error');
-        }
-      } else {
-        setError('회원가입 실패');
-      }
-    }
+    // try {
+    //   const response = await axios.post(`${COMMON_API_URL}/user/signup`, { nickname, email, pw });
+    //   setSuccess(response.data.success);
+    //   setTimeout(() => navigate('/login'), 1000); //성공 시 로그인 페이지로 이동
+    // } catch (error) {
+    //   if (error.response) {
+    //     if (error.response.status === 400) {
+    //       setError('올바르지 않은 데이터입니다.');
+    //     } else if (error.response.status === 409) {
+    //       setError('이미 사용 중인 아이디입니다.');
+    //     } else if (error.response.status === 500) {
+    //       setError('Server Error');
+    //     }
+    //   } else {
+    //     setError('회원가입 실패');
+    //   }
+    // }
   };
 
   return (
@@ -75,6 +78,7 @@ const SignupPage = () => {
           <S.FooterLink onClick={() => navigate('/login')}>로그인 하러가기</S.FooterLink>
         </S.LoginFooter>
       </LogInContainer>
+      {isSignupModalOpen && <ModalSignup setIsSignupModalOpen={setIsSignupModalOpen} />}
     </div>
   );
 };
