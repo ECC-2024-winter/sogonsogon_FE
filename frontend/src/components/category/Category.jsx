@@ -7,15 +7,15 @@ import { BsPersonWorkspace } from 'react-icons/bs';
 import * as S from './Category.style';
 
 const categories = [
-  { id: 1, name: '맛집', icon: <IoIosRestaurant />, hashtag: '#맛집' },
-  { id: 2, name: '카페', icon: <LuCoffee />, hashtag: '#카페' },
-  { id: 3, name: '전시회', icon: <AiOutlinePicture />, hashtag: '#전시회' },
-  { id: 4, name: '소품샵', icon: <SlDrawer />, hashtag: '#소품샵' },
+  { id: 1, name: '맛집', icon: <IoIosRestaurant />, hashtag: '맛집' },
+  { id: 2, name: '카페', icon: <LuCoffee />, hashtag: '카페' },
+  { id: 3, name: '전시회', icon: <AiOutlinePicture />, hashtag: '전시회' },
+  { id: 4, name: '소품샵', icon: <SlDrawer />, hashtag: '소품샵' },
   {
     id: 5,
     name: '연극/공연',
     icon: <BsPersonWorkspace />,
-    hashtag: '#연극/공연',
+    hashtag: '연극/공연',
   },
 ];
 
@@ -23,7 +23,7 @@ const Category = () => {
   const navigate = useNavigate();
 
   const handleCategoryClick = hashtag => {
-    navigate(`/results?query=${encodeURIComponent(hashtag)}`);
+    navigate(`/results/${encodeURIComponent(hashtag)}`);
   };
 
   return (

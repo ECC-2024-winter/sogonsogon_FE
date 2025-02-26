@@ -4,12 +4,14 @@ import { LogInContainer, InputField, ButtonLogin } from '../../components';
 import * as S from './LoginSignup.style';
 import axios from 'axios';
 import { COMMON_API_URL } from '../../consts';
+import { ModalLogin } from '../../components/Modal/ModalLogin/ModalLogin';
 
-const LoginPage = () => {
+const LoginPage = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState('');
   const [pw, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const isValidEmail = email => email.includes('@');
   const isValidPassword = pw => /^(?=.*?[a-zA-Z])(?=.*?[0-9]).{8,}$/.test(pw);
@@ -27,26 +29,31 @@ const LoginPage = () => {
       return;
     }
 
-    try {
-      const response = await axios.post(`${COMMON_API_URL}/user/signin`, { params: { email, pw } });
+    // 임시로 localStorage에 저장
+    localStorage.setItem('token', 'fake_token');
+    setIsLoggedIn(true);
+    setIsLoginModalOpen(true);
 
-      localStorage.setItem('jwtAccessToken', response.data.jwtAccessToken);
-      localStorage.setItem('userInfo', JSON.stringify(response.data.userInfo));
+    // try {
+    //   const response = await axios.post(`${COMMON_API_URL}/user/signin`, { params: { email, pw } });
 
-      navigate('/');
-    } catch (error) {
-      if (error.response) {
-        if (error.response.status === 401) {
-          setError('올바르지 않은 데이터입니다.');
-        } else if (error.response.status === 404) {
-          setError('존재하지 않는 사용자입니다.');
-        } else if (error.response.status === 500) {
-          setError('Server Error');
-        }
-      } else {
-        setError('회원가입 실패');
-      }
-    }
+    //   localStorage.setItem('jwtAccessToken', response.data.jwtAccessToken);
+    //   localStorage.setItem('userInfo', JSON.stringify(response.data.userInfo));
+
+    //   navigate('/');
+    // } catch (error) {
+    //   if (error.response) {
+    //     if (error.response.status === 401) {
+    //       setError('올바르지 않은 데이터입니다.');
+    //     } else if (error.response.status === 404) {
+    //       setError('존재하지 않는 사용자입니다.');
+    //     } else if (error.response.status === 500) {
+    //       setError('Server Error');
+    //     }
+    //   } else {
+    //     setError('로그인 실패');
+    //   }
+    // }
   };
 
   return (
@@ -61,6 +68,8 @@ const LoginPage = () => {
           <S.FooterLink onClick={() => navigate('/signup')}>회원가입하기</S.FooterLink>
         </S.LoginFooter>
       </LogInContainer>
+
+      {isLoginModalOpen && <ModalLogin setIsLoginModalOpen={setIsLoginModalOpen} />}
     </div>
   );
 };
