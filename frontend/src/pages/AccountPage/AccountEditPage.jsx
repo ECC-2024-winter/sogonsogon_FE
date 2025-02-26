@@ -31,9 +31,15 @@ export function AccountEditPage() {
       <S.AccountContainer>
         <S.AccountBox>
           <S.Text>닉네임</S.Text>
-          <S.Nickname>{/*TODO:실제 닉네임 데이터 삽입*/}</S.Nickname>
+          <S.Nickname>
+            {/*TODO:실제 닉네임 데이터 삽입*/}
+            <S.MockupInput>홍길동</S.MockupInput>
+          </S.Nickname>
           <S.Text>이메일 주소</S.Text>
-          <S.Email>{/*TODO:실제 이메일 데이터 삽입*/}</S.Email>
+          <S.Email>
+            {/*TODO:실제 이메일 데이터 삽입*/}
+            <S.MockupInput>gildong@gmail.com</S.MockupInput>
+          </S.Email>
           <S.Password>
             <S.Text>비밀번호</S.Text>
             <S.ButtonPW

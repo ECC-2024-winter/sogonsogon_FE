@@ -73,21 +73,29 @@ export const Text = styled.div`
 `;
 
 export const Nickname = styled.div`
+  display: flex;
   width: 400px;
   height: 30px;
   border-radius: 7px;
   border: 1px solid #d9d9d9;
   background-color: #ffffff;
   margin-top: 10px;
+  align-items: center;
+`;
+export const MockupInput = styled.label`
+  margin-left: 10px;
+  text-align: center;
 `;
 
 export const Email = styled.div`
+  display: flex;
   width: 400px;
   height: 30px;
   border-radius: 7px;
   border: 1px solid #d9d9d9;
   background-color: #f6e9de;
   margin-top: 10px;
+  align-items: center;
 `;
 
 export const Password = styled.div`

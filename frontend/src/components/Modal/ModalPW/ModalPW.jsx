@@ -3,6 +3,7 @@ import ButtonModal from '../../common/Button/ButtonModal';
 import ButtonBasic from '../../common/Button/ButtonBasic';
 import { IoMdClose, IoMdEye, IoMdEyeOff } from 'react-icons/io';
 import { useState } from 'react';
+import { ModalUserEdit } from '../ModalUserEdit/ModalUserEdit';
 
 export const ModalPW = ({ openModal, setOpenModal }) => {
   const [showPW, setShowPW] = useState({
@@ -26,17 +27,17 @@ export const ModalPW = ({ openModal, setOpenModal }) => {
   };
 
   const [errorMessage, setErrorMessage] = useState('');
-
-  //새 비밀번호 불일치할 경우 + 기존 비밀번호 불일치할 경우우의 경고 메시지
+  const [userEditOpenModal, setUserEditOpenModal] = useState(false);
+  //새 비밀번호 불일치할 경우 + 기존 비밀번호 불일치할 경우의 경고 메시지
   const handleSave = () => {
-    if (passwords.current !== '현재 비밀번호') {
+    if (passwords.current !== 'gildong12345') {
       //TODO: '현재 비밀번호'에 실제 비밀번호 데이터 넣기
       setErrorMessage('현재 비밀번호가 올바르지 않습니다.');
     } else if (passwords.new !== passwords.confirm) {
       setErrorMessage('새 비밀번호가 일치하지 않습니다.');
     } else {
       setErrorMessage('');
-      setOpenModal(false);
+      setUserEditOpenModal(true);
       //TODO: 비밀번호 변경되도록 하는 코드 삽입
     }
   };
@@ -97,6 +98,8 @@ export const ModalPW = ({ openModal, setOpenModal }) => {
           {!openModal ? setOpenModal(true) : null}
         </S.SaveButton>
       </S.EditContainer>
+
+      {userEditOpenModal && <ModalUserEdit setUserEditOpenModal={setUserEditOpenModal} setOpenModal={setOpenModal} />}
     </S.Overlay>
   );
 };
